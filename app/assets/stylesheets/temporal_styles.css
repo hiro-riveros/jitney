@@ -1,0 +1,168 @@
+body {
+  font: 14px sans-serif;
+  overflow-y: auto;
+}
+
+a.navbar-brand {
+  color: #ECF0F1;
+}
+
+.navbar-primary {
+  background-color: #2980B9;
+  color: #ECF0F1;
+}
+
+ul.nav.navbar-nav li a {
+  color: #ECF0F1;
+}
+.nav > li > a:hover,
+.nav > li > a:focus {
+  background-color: #E67E22 !important;
+  color: #ECF0F1;
+  
+}
+
+.navbar-primary .navbar-toggle{
+  border-color: #ffffff;
+}
+
+.navbar-primary .navbar-toggle .icon-bar{
+  background-color: #ffffff;
+}
+
+.modal-dialog .modal-content .modal-header {
+  background-color: #2980B9;
+  color: #ECF0F1;
+}
+
+.btn-login {
+  background-color: #E67E22 !important;
+  background-image: linear-gradient(to bottom, #E67E22 0%, #E67E22 100%) !important;
+  background-image: linear-gradient(#E67E22 0%, #E67E22 100%) !important;
+  color: #ffffff;
+  font-size: 4vw;
+}
+
+.btn-login {
+  background-image: linear-gradient(#E67E22 0%, #E67E22 100%) !important;
+  border-color: #B77C49 !important;
+}
+
+.angular-google-map-container {
+  widows: 100%;
+  height: 725px; 
+}
+
+.title-about{
+  padding-top: 65px;
+}
+
+textarea {
+  resize: none;
+}
+
+.title-contact{
+  background-color: transparent;
+  padding-top: 1px;
+  padding-bottom: 1px;
+  color: #E67E22;
+}
+
+.transparent-content {
+  height: 370px;
+  margin: 0 auto;
+  padding-left: 70px;
+  padding-right: 70px;
+  position: absolute;
+  top: 80px;
+  width: 100%;
+  z-index: 9999;
+}
+
+.col-md-12.col-sm-12.col-xs-12.content {
+  background-color: #E9EAED;
+  height: 1500px;
+  margin-top: 50px;
+  padding-top: 15px;
+  padding-right: 0;
+  padding-left: 0;
+}
+
+#home {
+  margin-bottom: 30px;
+}
+
+#plans {
+  margin-bottom: 30px;
+}
+
+.card {
+  background-color: #F5F5F5;
+  border: 1px solid black;
+  height: 400px;
+  margin: 0 auto;
+  margin-bottom: 10px;
+  padding-top: 10px;
+  width: 100%;
+}
+
+.card-title {
+  border: 1px solid black;
+  height: 60px;
+  width: 80%;
+  margin: 0 auto;
+}
+
+#app {
+  background-color: #2980B9;
+  border: 1px solid black;
+  height: 500px;
+  margin-bottom: 20px;
+}
+
+.row-one {
+  margin-bottom: 30px;
+}
+
+#footer {
+  height: 200px;
+  border: 1px solid black;
+}
+
+
+/* ----------- Non-Retina Screens ----------- */
+/*@media screen and (min-device-width: 1200px) and (max-device-width: 1600px) { 
+  .col-md-4.col-sm-4 {
+  }
+}*/
+
+/* Portrait and Landscape */
+/*@media only screen and (min-device-width: 768px) and (max-device-width: 1024px) {
+  .col-md-4.col-sm-4 {
+    margin-bottom: 30px;
+  }
+}*/
+
+/* Portrait and Landscape */
+/*@media screen and (device-width: 320px) and (device-height: 640px) {
+  .col-md-4.col-sm-4 {
+    margin-bottom: 30px;  
+  }
+}
+*/
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
