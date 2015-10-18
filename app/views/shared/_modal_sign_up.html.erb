@@ -1,0 +1,77 @@
+<script type="text/ng-template" id="signup.html">
+  <div class="modal-header">
+  	<h5 class="modal-title">sign up</h5>
+  </div>
+  <div class="modal-body">
+  	<div class="container-fluid">
+  		<div class="row">
+  			<div class="col-md-12 col-sm-12 col-xs-12">
+  				<div class="col-md-6 col-sm-6 col-xs-6">
+  					<div class="form-group">
+  						<input type="text"
+  							placeholder="nombre"
+  							maxlength="100"
+  							class="form-control"
+  							ng-model="user.firstName">
+  					</div>
+  					</div>
+  					<div class="col-md-6 col-sm-6 col-xs-6">
+  						<div class="form-group">
+  							<input type="text"
+  								placeholder="apellido"
+  								maxlength="100"
+  								class="form-control"
+  								ng-model="user.lastName">
+  						</div>
+  					</div>
+  					<div class="col-md-12 col-sm-12 col-xs-12">
+  						<div class="form-group">
+  							<input type="email"
+  								placeholder="email"
+  								maxlength="100"
+  								class="form-control"
+  								ng-model="user.email">
+  						</div>
+  					</div>
+  					<div class="col-md-6 col-sm-6 col-xs-6">
+  						<div class="form-group">
+  							<input type="password"
+  								placeholder="*******"
+  								maxlength="100"
+  								class="form-control"
+  								ng-model="user.password">
+  						</div>
+  					</div>
+  					<div class="col-md-6 col-sm-6 col-xs-6">
+  						<div class="form-group">
+  							<input type="password"
+  								placeholder="confirmar password"
+  								maxlength="100"
+  								class="form-control"
+  								ng-model="user.passwordConfirm">
+  						</div>
+  					</div>
+  				</div>
+  			</div>
+  			<div class="col-md-6 col-sm-6 col-xs-6">
+  				<div class="form-group">
+  					<input type="text"
+  						placeholder="direccion"
+  						class="form-control"
+  						ng-model="user.address">
+  				</div>
+  			</div>
+  			<div class="col-md-6 col-sm-6 col-xs-6">
+  				<div class="form-group">
+  					<select ng-model="user.age" class="form-control">
+  						<option value="{{option.age}}" ng-repeat="option in ages">{{option.age}}</option>
+  					</select>
+  				</div>
+  			</div>
+  			<div class="form-group">
+  				<button class="btn btn-default btn-block" ng-click="signup()">sign up</button>
+  			</div>
+  		</div>
+  	</div>
+  </div>
+</script>
