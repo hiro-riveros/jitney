@@ -1,0 +1,35 @@
+{
+  "name": "angularjs-utilities",
+  "version": "0.0.9",
+  "homepage": "https://github.com/realcrowd/angularjs-utilities",
+  "authors": [
+    "realcrowd (dev@realcrowd.com)"
+  ],
+  "description": "Hopefully useful directives, providers, filters, etc for AngularJS",
+  "keywords": [
+    "angular",
+    "directives",
+    "modules",
+    "validation"
+  ],
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "angular": "1.0.8"
+  },
+  "_release": "0.0.9",
+  "_resolution": {
+    "type": "version",
+    "tag": "v0.0.9",
+    "commit": "648cc1ec825ba82ba27f13ba85dccc3b61173a91"
+  },
+  "_source": "git://github.com/realcrowd/angularjs-utilities.git",
+  "_target": "*",
+  "_originalSource": "angularjs-utilities"
+}

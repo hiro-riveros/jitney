@@ -1,0 +1,22 @@
+<div ng-controller="ContactController" class="landingController">
+  <ui-gmap-google-map center="map.center" zoom="map.zoom" options="options"></ui-gmap-google-map>
+  <div class="transparent-content">
+    <div class="title-contact">
+      <h1 class="text-center">colectifacil</h1>
+    </div>
+    <div class="content">
+      <div class="form-group">
+        <input type="text" placeholder="hirochi" ng-model="contact.name" class="form-control"/>
+      </div>
+      <div class="form-group">
+        <input type="email" placeholder="user@colectifacil.com" ng-model="contact.email" class="form-control"/>
+      </div>
+      <div class="form-group">
+        <textarea placeholder="deja tu comentario" rows="9" cols="50" ng-model="contact.message" class="form-control"></textarea>
+      </div>
+      <div class="form-group">
+        <button ng-click="sendContact()" class="btn btn-success btn-block">enviar mensaje</button>
+      </div>
+    </div>
+  </div>
+</div>

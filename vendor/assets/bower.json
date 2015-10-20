@@ -1,0 +1,21 @@
+{
+  "name": "dsl-generated dependencies",
+  "dependencies": {
+    "jquery-ui": "latest",
+    "underscore": "latest",
+    "animate.css": "latest",
+    "font-awesome": "latest",
+    "bootstrap-sass-official": "latest",
+    "angular": "latest",
+    "angular-full": "latest",
+    "angular-ui-router": "latest",
+    "angularjs-utilities": "latest",
+    "angular-bootstrap": "latest",
+    "angular-notify": "latest",
+    "ngstorage": "latest"
+  },
+  "resolutions": {
+    "angular": "1.3.15",
+    "bootstrap-sass-official": "3.3.4"
+  }
+}
