@@ -10,14 +10,20 @@
 # Ignore the default SQLite database.
 /db/*.sqlite3
 /db/*.sqlite3-journal
+<<<<<<< HEAD
 /db/schema.rb
+=======
+>>>>>>> 9b1ac28d45f373cc8971e0806012023c29aff724
 
 # Ignore all logfiles and tempfiles.
 /log/*
 !/log/.keep
 /tmp
+<<<<<<< HEAD
 .rbenv-vars
 .powder
 
 # Ignore bower packages
 /vendor/assets/bower_components
+=======
+>>>>>>> 9b1ac28d45f373cc8971e0806012023c29aff724

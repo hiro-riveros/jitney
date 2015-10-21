@@ -81,7 +81,11 @@ textarea {
 
 .col-md-12.col-sm-12.col-xs-12.content {
   background-color: #E9EAED;
+<<<<<<< HEAD
   height: 1500px;
+=======
+  /* height: 1500px; */
+>>>>>>> 9b1ac28d45f373cc8971e0806012023c29aff724
   margin-top: 50px;
   padding-top: 15px;
   padding-right: 0;
