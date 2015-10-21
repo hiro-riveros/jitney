@@ -2,7 +2,7 @@ body {
   font: 14px sans-serif;
   overflow-y: auto;
 }
-
+/*
 a.navbar-brand {
   color: #ECF0F1;
 }
@@ -28,7 +28,7 @@ ul.nav.navbar-nav li a {
 
 .navbar-primary .navbar-toggle .icon-bar{
   background-color: #ffffff;
-}
+}*/
 
 .modal-dialog .modal-content .modal-header {
   background-color: #2980B9;
