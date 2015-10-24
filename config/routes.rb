@@ -13,7 +13,10 @@ Rails.application.routes.draw do
 
   devise_for :users, :controllers => { omniauth_callbacks: 'omniauth_callbacks' }
   
-  
+  namespace :api, path: '/api', defaults: {format: :json} do
+    resources :users, only: [:show]
+  end
+
 
   # match '/users/:id/finish_signup' => 'users#finish_signup', via: [:get, :patch], :as => :finish_signup
 

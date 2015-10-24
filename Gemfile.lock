@@ -48,7 +48,6 @@ GEM
       sass (~> 3.2)
     bower-rails (0.10.0)
     builder (3.2.2)
-    byebug (6.0.2)
     coffee-rails (4.1.0)
       coffee-script (>= 2.2.0)
       railties (>= 4.0.0, < 5.0)
@@ -133,6 +132,7 @@ GEM
       omniauth-oauth (~> 1.1)
     orm_adapter (0.5.0)
     pg (0.18.3)
+    pg (0.18.3-x86-mingw32)
     rack (1.6.4)
     rack-test (0.6.3)
       rack (>= 1.0)
@@ -194,8 +194,6 @@ GEM
       coffee-rails
     tzinfo (1.2.2)
       thread_safe (~> 0.1)
-    tzinfo-data (1.2015.7)
-      tzinfo (>= 1.0.0)
     uglifier (2.7.2)
       execjs (>= 0.3.0)
       json (>= 1.8.0)
@@ -215,7 +213,6 @@ DEPENDENCIES
   autoprefixer-rails
   bootstrap-sass (~> 3.2.0)
   bower-rails (~> 0.10.0)
-  byebug
   coffee-rails (~> 4.1.0)
   devise
   haml-rails (>= 0.3.4)
@@ -231,6 +228,5 @@ DEPENDENCIES
   sdoc (~> 0.4.0)
   simple_form
   turbolinks
-  tzinfo-data
   uglifier (>= 1.3.0)
   web-console (~> 2.0)
