@@ -12,6 +12,9 @@ Rails.application.routes.draw do
   root 'welcome#index'
 
   devise_for :users, :controllers => { omniauth_callbacks: 'omniauth_callbacks' }
+  namespace :api, path: '/api', defaults: {format: :json} do
+    resources :users, only: [:show]
+  end
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
