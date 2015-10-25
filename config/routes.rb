@@ -1,16 +1,12 @@
 Rails.application.routes.draw do
-  get 'welcome/index'
-
   #get 'landing#index'
   #get 'landing#contact'
   #get 'landing#about'
 
-  get '/index' => 'landing#index'
-
-  resources :products
-
   root 'welcome#index'
 
+  resources :products
+  
   devise_for :users, :controllers => { omniauth_callbacks: 'omniauth_callbacks' }
   namespace :api, path: '/api', defaults: {format: :json} do
     resources :users, only: [:show]

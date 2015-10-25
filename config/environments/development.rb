@@ -38,11 +38,9 @@ Rails.application.configure do
 
   # Raises error for missing translations
   # config.action_view.raise_on_missing_translations = true
-<<<<<<< HEAD
-=======
-
   # General Settings
-  config.app_domain = 'myapp.com'
+
+  config.app_domain = 'colectifacil.cl'
 
   # Email
   config.action_mailer.delivery_method = :smtp
@@ -55,8 +53,6 @@ Rails.application.configure do
     user_name: 'someuser',
     password: 'somepass',
     authentication: :plain,
-    domain: 'myapp.com'
+    domain: 'colectifacil.cl'
   }
-
->>>>>>> 9b1ac28d45f373cc8971e0806012023c29aff724
 end

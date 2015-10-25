@@ -2,11 +2,7 @@ class ApplicationController < ActionController::Base
   # Prevent CSRF attacks by raising an exception.
   # For APIs, you may want to use :null_session instead.
   protect_from_forgery with: :exception
-<<<<<<< HEAD
-=======
-  # before_action :authenticate_user!
-
-
+  
   def ensure_signup_complete
     # Ensure we don't go into an infinite loop
     return if action_name == 'finish_signup'
@@ -17,5 +13,4 @@ class ApplicationController < ActionController::Base
       redirect_to finish_signup_path(current_user)
     end
   end
->>>>>>> 9b1ac28d45f373cc8971e0806012023c29aff724
 end

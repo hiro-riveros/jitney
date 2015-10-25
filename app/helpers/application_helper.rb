@@ -1,6 +1,4 @@
 module ApplicationHelper
-<<<<<<< HEAD
-=======
 
   def resource_name
     :user
@@ -13,5 +11,4 @@ module ApplicationHelper
   def devise_mapping
    @devise_mapping ||= Devise.mappings[:user]
   end
->>>>>>> 9b1ac28d45f373cc8971e0806012023c29aff724
 end
