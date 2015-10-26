@@ -1,24 +1,25 @@
-production:
-  adapter: postgresql
-  encoding: utf8
-  database: <%= ENV['PROD_DB_NAME'] %>
-  pool: 5
-  username: <%= ENV['PROD_DB_USER'] %>
-  password: <%= ENV['PROD_DB_PASSWORD'] %>
-  host: <%= ENV['PROD_DB_HOST'] %>
-  port: <%= ENV['PROD_DB_PORT'] %>
+# production:
+#   adapter: postgresql
+#   encoding: utf8
+#   database: <%= ENV['PROD_DB_NAME'] %>
+#   pool: 5
+#   username: <%= ENV['PROD_DB_USER'] %>
+#   password: <%= ENV['PROD_DB_PASSWORD'] %>
+#   host: <%= ENV['PROD_DB_HOST'] %>
+#   port: <%= ENV['PROD_DB_PORT'] %>
 
 development: &development
   adapter: postgresql
   encoding: utf8
-  database: <%= ENV['DEV_DB_NAME'] %>_development
-  password: <%= ENV['DEV_DB_PASSWORD'] %>
-  username: <%= ENV['DEV_DB_USER'] %>
+  database: jir_development
+  host: localhost
+  password: postgres
+  username: postgres
 
 # Warning: The database defined as "test" will be erased and
 # re-generated from your development database when you run "rake".
 # Do not set this db to the same as development or production.
 test:
   <<: *development
-  database: <%= ENV['DEV_DB_NAME'] %>_test
+  database: jir_test
   pool: 5

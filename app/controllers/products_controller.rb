@@ -1,6 +1,7 @@
 class ProductsController < ApplicationController
   before_action :set_product, only: [:show, :edit, :update, :destroy]
-    before_action :authenticate_user!
+  before_action :authenticate_user!
+  before_filter :ensure_signup_complete, only: [:new, :create, :update, :destroy]
 
   # GET /products
   # GET /products.json

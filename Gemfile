@@ -45,14 +45,14 @@ gem 'simple_token_authentication', '~> 1.0'
 group :development, :test do
   gem "rspec-rails"
   gem "factory_girl_rails"
-  gem "pry-byebug"
+  #gem "pry-byebug"
   gem "zeus"
   gem "guard-rspec", require: false
   gem "rspec-nc", require: false
   gem "pry-rails"
   gem "faker"
   gem "quiet_assets"
-  gem "better_errors"
+  #gem "better_errors"
   gem "binding_of_caller"
 end
 
