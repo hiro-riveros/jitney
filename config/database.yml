@@ -12,6 +12,7 @@ development: &development
   adapter: postgresql
   encoding: utf8
   database: <%= ENV['DEV_DB_NAME'] %>_development
+  host: localhost
   password: <%= ENV['DEV_DB_PASSWORD'] %>
   username: <%= ENV['DEV_DB_USER'] %>
 
