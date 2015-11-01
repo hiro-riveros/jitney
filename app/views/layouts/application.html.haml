@@ -54,6 +54,8 @@
                 %a{"data-toggle" => "modal", :href => "#loginModal"} Login
             -else
               %li.page-scroll
-                = link_to 'My profile', user_path(current_user)
+                = link_to 'My profile', "profile/#{current_user.id}"
+              %li.page-scroll
+                = link_to "Sign out", destroy_user_session_path, :method => :delete
                
     = yield
