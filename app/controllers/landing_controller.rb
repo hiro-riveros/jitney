@@ -1,11 +1,6 @@
 class LandingController < ApplicationController
 	
-	def index
-<<<<<<< HEAD
-		
-=======
-		render 'index'
->>>>>>> 9b1ac28d45f373cc8971e0806012023c29aff724
+	def index		
 	end
 
 	def contact

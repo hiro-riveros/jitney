@@ -1,9 +1,9 @@
 production:
   adapter: postgresql
   encoding: utf8
-  database: <%= ENV['PROD_DB_NAME'] %>
+  database: jitney
   pool: 5
-  username: <%= ENV['PROD_DB_USER'] %>
-  password: <%= ENV['PROD_DB_PASSWORD'] %>
-  host: <%= ENV['PROD_DB_HOST'] %>
-  port: <%= ENV['PROD_DB_PORT'] %>
+  username: jir
+  password: jir
+  host: localhost
+  port: 5432
