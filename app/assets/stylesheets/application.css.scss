@@ -11,9 +11,8 @@
  * file per style scope.
  *
  *= require bootstrap-sass-official/assets/stylesheets/_bootstrap
- *= require font-awesome/css/font-awesome
  *= require animate.css/animate
- *= require angular-notify/dist/angular-notify
+ *= require profile
  *= require_tree .
  *= require_self
  */

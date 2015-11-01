@@ -7,12 +7,13 @@ Devise.setup do |config|
   # Devise will use the `secret_key_base` on Rails 4+ applications as its `secret_key`
   # by default. You can change it below and use your own secret key.
   config.secret_key = '1c8239beabec3fb5cf6ed29f2c7edb6be10066c184f9ce10c1619643662243bf8d055c66db9a69936a698c266385195e9d13eddfbad34ec95dad19054f84e6d'
+  # config.secret_key = '088805565a1b88ca45d2944c347fbbc7871e08e3f8ea551d33876fa73a55ce9945afb2231cf2ea9ca99d3976c5cd676be944b691d441ba11d846ff58cb210669'
 
   # ==> Mailer Configuration
   # Configure the e-mail address which will be shown in Devise::Mailer,
   # note that it will be overwritten if you use your own mailer class
   # with default "from" parameter.
-  config.mailer_sender = 'please-change-me-at-config-initializers-devise@example.com'
+  config.mailer_sender = 'team@jir.cl'
 
   # Configure the class responsible to send e-mails.
   # config.mailer = 'Devise::Mailer'
@@ -99,7 +100,7 @@ Devise.setup do |config|
   config.stretches = Rails.env.test? ? 1 : 10
 
   # Setup a pepper to generate the encrypted password.
-  # config.pepper = '58d54a6bbcb2553c4f200e0b438da379dcffd5b513ba1884898bdc5e49ad400744738ed35cd113c4f635e892659cf66ca91cf08606b9fd55cd3b82ca91272f85'
+  # config.pepper = 'f9192dde85a45ca80e48ce9e5205ac5682d847556207478db96d4d886e040cf321219725af5ba72a86e0e64952c4bc5babf7490f03c35e38fe478af8dae0e78d'
 
   # ==> Configuration for :confirmable
   # A period that the user is allowed to access the website even without
@@ -208,7 +209,7 @@ Devise.setup do |config|
   # Turn scoped views on. Before rendering "sessions/new", it will first check for
   # "users/sessions/new". It's turned off by default because it's slower if you
   # are using only default views.
-  # config.scoped_views = false
+  config.scoped_views = true
 
   # Configure the default scope given to Warden. By default it's the first
   # devise role declared in your routes (usually :user).
@@ -237,10 +238,6 @@ Devise.setup do |config|
   # up on your models and hooks.
   # config.omniauth :github, 'APP_ID', 'APP_SECRET', scope: 'user,public_repo'
 
-  config.omniauth :facebook, "KEY", "SECRET"
-  config.omniauth :twitter, "KEY", "SECRET"
-  config.omniauth :linked_in, "KEY", "SECRET"
-
   # ==> Warden configuration
   # If you want to use other strategies, that are not supported by Devise, or
   # change the failure app, you can configure them inside the config.warden block.
@@ -263,4 +260,10 @@ Devise.setup do |config|
   # When using OmniAuth, Devise cannot automatically set OmniAuth path,
   # so you need to do it manually. For the users scope, it would be:
   # config.omniauth_path_prefix = '/my_engine/users/auth'
+
+  Devise.setup do |config|
+    config.omniauth :facebook, "1654131634799803", "2207224296cc401ac0f9822a966e4cb0"
+    config.omniauth :twitter, "KEY", "SECRET"
+    config.omniauth :linked_in, "KEY", "SECRET"
+  end
 end

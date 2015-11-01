@@ -1,6 +1,5 @@
 module ApplicationHelper
-
-  def resource_name
+	def resource_name
     :user
   end
 
@@ -9,6 +8,6 @@ module ApplicationHelper
   end
 
   def devise_mapping
-   @devise_mapping ||= Devise.mappings[:user]
+  	@devise_mapping ||= Devise.mappings[:user]
   end
 end

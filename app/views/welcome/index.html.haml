@@ -1,36 +1,3 @@
-/ Navigation
-%nav.navbar.navbar-default.navbar-fixed-top
-  .container
-    / Brand and toggle get grouped for better mobile display
-    .navbar-header.page-scroll
-      %button.navbar-toggle{"data-target" => "#bs-example-navbar-collapse-1", "data-toggle" => "collapse", :type => "button"}
-        %span.sr-only Toggle navigation
-        %span.icon-bar
-        %span.icon-bar
-        %span.icon-bar
-      %a.navbar-brand{:href => "#page-top"} Jitney in Route
-    / Collect the nav links, forms, and other content for toggling
-    #bs-example-navbar-collapse-1.collapse.navbar-collapse
-      %ul.nav.navbar-nav.navbar-right
-        %li.hidden
-          %a{:href => "#page-top"}
-        %li.page-scroll
-          %a{:href => "#portfolio"} Portfolio
-        %li.page-scroll
-          %a{:href => "#about"} About
-        %li.page-scroll
-          %a{:href => "#contact"} Contact
-        / %li.page-scroll
-        /   %a{:href => "/users/sign_up"} Register
-        / %li.page-scroll
-        /   %a{:href => "/users/sign_in"} Login
-        %li.page-scroll
-          %a{"data-toggle" => "modal", :href => "#registerModal"} Register
-        %li.page-scroll
-          %a{"data-toggle" => "modal", :href => "#loginModal"} Login
-    / /.navbar-collapse
-  / /.container-fluid
-/ Header
 %section#slider
   .container
     .row
@@ -462,16 +429,16 @@
       .field
         %label{:for => "user_email"} Email
         %br
-        %input#user_email{:autofocus => "autofocus", :name => "user[email]", :type => "email", :value => ""}
+        %input.input-group#user_email{:autofocus => "autofocus", :name => "user[email]", :type => "email", :value => ""}
       .field
         %label{:for => "user_password"} Password
         %em (8 characters minimum)
         %br
-        %input#user_password{:autocomplete => "off", :name => "user[password]", :type => "password"}
+        %input.input-group#user_password{:autocomplete => "off", :name => "user[password]", :type => "password"}
       .field
         %label{:for => "user_password_confirmation"} Password confirmation
         %br
-        %input#user_password_confirmation{:autocomplete => "off", :name => "user[password_confirmation]", :type => "password"}
+        %input.input-group#user_password_confirmation{:autocomplete => "off", :name => "user[password_confirmation]", :type => "password"}
       .actions
         %input.btn.btn-default{:name => "commit", :type => "submit", :value => "Sign up"}
 
@@ -507,11 +474,11 @@
       .field
         %label{:for => "user_email"} Email
         %br
-        %input#user_email{:autofocus => "autofocus", :name => "user[email]", :type => "email", :value => ""}
+        %input.input-group#user_email{:autofocus => "autofocus", :name => "user[email]", :type => "email", :value => ""}
       .field
         %label{:for => "user_password"} Password
         %br
-        %input#user_password{:autocomplete => "off", :name => "user[password]", :type => "password"}
+        %input.input-group#user_password{:autocomplete => "off", :name => "user[password]", :type => "password"}
       .field
         %input{:name => "user[remember_me]", :type => "hidden", :value => "0"}
         %input#user_remember_me{:name => "user[remember_me]", :type => "checkbox", :value => "1"}
@@ -540,8 +507,8 @@
 / %script{:src => "js/bootstrap.min.js"}
 / Plugin JavaScript
 %script{:src => "http://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.3/jquery.easing.min.js"}
-/%script{:src => "js/classie.js"}
-/%script{:src => "js/cbpAnimatedHeader.js"}
+%script{:src => "assets/classie.js"}
+%script{:src => "assets/cbpAnimatedHeader.js"}
 / Contact Form JavaScript
 /%script{:src => "js/jqBootstrapValidation.js"}
 /%script{:src => "js/contact_me.js"}

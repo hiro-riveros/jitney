@@ -1,0 +1,68 @@
+.back
+  .container
+    .row
+      .col-md-5.toppad.pull-right.col-md-offset-3
+        %a{:href => "edit.html"} Edit Profile
+        %a{:href => "edit.html"} Logout
+        %br/
+        %p.text-info May 05,2014,03:00 pm
+      .col-xs-12.col-sm-12.col-md-6.col-lg-6.col-xs-offset-0.col-sm-offset-0.col-md-offset-3.col-lg-offset-3.toppad
+        .panel.panel-info
+          .panel-heading
+            %h3.panel-title #{current_user.name}
+          .panel-body
+            .row
+              .col-md-3.col-lg-3{:align => "center"}
+                %img.img-circle.img-responsive{:alt => "User Pic", :src => "http://babyinfoforyou.com/wp-content/uploads/2014/10/avatar-300x300.png"}/
+              /
+                <div class="col-xs-10 col-sm-10 hidden-md hidden-lg"> <br>
+                <dl>
+                <dt>DEPARTMENT:</dt>
+                <dd>Administrator</dd>
+                <dt>HIRE DATE</dt>
+                <dd>11/12/2013</dd>
+                <dt>DATE OF BIRTH</dt>
+                <dd>11/12/2013</dd>
+                <dt>GENDER</dt>
+                <dd>Male</dd>
+                </dl>
+                </div>
+              .col-md-9.col-lg-9
+                %table.table.table-user-information
+                  %tbody
+                    %tr
+                      %td Last name:
+                      %td #{current_user.last_name}
+                    %tr
+                      %td Second last name:
+                      %td #{current_user.slast_name}
+                    %tr
+                      %td Age
+                      %td
+                        #{current_user.age}
+                    %tr
+                      %td Created at:
+                      %td 
+                        #{current_user.confirmed_at}
+                    %tr
+                      %td Email
+                      %td
+                        /%a{:href => "mailto:info@support.com"} info@support.com
+                        #{current_user.email}
+                    / %td Phone Number
+                    / %td
+                    /   123-4567-890(Landline)
+                    /   %br/
+                    /   = succeed "555-4567-890(Mobile)" do
+                    /     %br/
+                / %a.btn.btn-primary{:href => "#"} My Sales Performance
+                / %a.btn.btn-primary{:href => "#"} Team Sales Performance
+          .panel-footer
+            %a.btn.btn-sm.btn-primary{"data-original-title" => "Broadcast Message", "data-toggle" => "tooltip", :type => "button"}
+              %i.glyphicon.glyphicon-envelope
+            %span.pull-right
+              %a.btn.btn-sm.btn-warning{"data-original-title" => "Edit this user", "data-toggle" => "tooltip", :href => "#{current_user.id}/edit", :type => "button"}
+                %i.glyphicon.glyphicon-edit
+              %a.btn.btn-sm.btn-danger{"data-original-title" => "Remove this user", "data-toggle" => "tooltip", :type => "button"}
+                %i.glyphicon.glyphicon-remove
+  }

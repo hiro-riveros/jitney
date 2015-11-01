@@ -40,7 +40,8 @@ Rails.application.configure do
   # config.action_view.raise_on_missing_translations = true
   # General Settings
 
-  config.app_domain = 'colectifacil.cl'
+# General Settings
+  config.app_domain = 'localhost:3000'
 
   # Email
   config.action_mailer.delivery_method = :smtp
@@ -50,9 +51,9 @@ Rails.application.configure do
     address: 'smtp.gmail.com', 
     port: '587',
     enable_starttls_auto: true,
-    user_name: 'someuser',
-    password: 'somepass',
+    user_name: 'jir',
+    password: 'jitney',
     authentication: :plain,
-    domain: 'colectifacil.cl'
+    domain: 'localhost:3000'
   }
 end
