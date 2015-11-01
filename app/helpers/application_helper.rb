@@ -1,6 +1,5 @@
 module ApplicationHelper
-
-  def resource_name
+	def resource_name
     :user
   end
 

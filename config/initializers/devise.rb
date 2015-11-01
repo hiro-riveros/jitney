@@ -6,7 +6,7 @@ Devise.setup do |config|
   # confirmation, reset password and unlock tokens in the database.
   # Devise will use the `secret_key_base` on Rails 4+ applications as its `secret_key`
   # by default. You can change it below and use your own secret key.
-  # config.secret_key = 'c4b01be8093f850ec22c945e1b4dc1138642bf56b514c1475d92296c8e0b7a668c3f3edbf3760b228d40d8cf79fe48ef912741c45904b45757aa212f71672346'
+  # config.secret_key = '088805565a1b88ca45d2944c347fbbc7871e08e3f8ea551d33876fa73a55ce9945afb2231cf2ea9ca99d3976c5cd676be944b691d441ba11d846ff58cb210669'
 
   # ==> Mailer Configuration
   # Configure the e-mail address which will be shown in Devise::Mailer,
@@ -99,7 +99,7 @@ Devise.setup do |config|
   config.stretches = Rails.env.test? ? 1 : 10
 
   # Setup a pepper to generate the encrypted password.
-  # config.pepper = '58d54a6bbcb2553c4f200e0b438da379dcffd5b513ba1884898bdc5e49ad400744738ed35cd113c4f635e892659cf66ca91cf08606b9fd55cd3b82ca91272f85'
+  # config.pepper = 'f9192dde85a45ca80e48ce9e5205ac5682d847556207478db96d4d886e040cf321219725af5ba72a86e0e64952c4bc5babf7490f03c35e38fe478af8dae0e78d'
 
   # ==> Configuration for :confirmable
   # A period that the user is allowed to access the website even without
@@ -237,10 +237,6 @@ Devise.setup do |config|
   # up on your models and hooks.
   # config.omniauth :github, 'APP_ID', 'APP_SECRET', scope: 'user,public_repo'
 
-  config.omniauth :facebook, "KEY", "SECRET"
-  config.omniauth :twitter, "KEY", "SECRET"
-  config.omniauth :linked_in, "KEY", "SECRET"
-
   # ==> Warden configuration
   # If you want to use other strategies, that are not supported by Devise, or
   # change the failure app, you can configure them inside the config.warden block.
@@ -263,4 +259,10 @@ Devise.setup do |config|
   # When using OmniAuth, Devise cannot automatically set OmniAuth path,
   # so you need to do it manually. For the users scope, it would be:
   # config.omniauth_path_prefix = '/my_engine/users/auth'
+
+  Devise.setup do |config|
+    config.omniauth :facebook, "1654131634799803", "2207224296cc401ac0f9822a966e4cb0"
+    config.omniauth :twitter, "KEY", "SECRET"
+    config.omniauth :linked_in, "KEY", "SECRET"
+  end
 end

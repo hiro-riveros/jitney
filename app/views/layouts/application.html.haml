@@ -8,7 +8,7 @@
     %meta{:content => "", :name => "author"}
     %title colectifacil
     / Custom Fonts
-    %link{:href => "font-awesome/css/font-awesome.min.css", :rel => "stylesheet", :type => "text/css"}
+    /%link{:href => "font-awesome/css/font-awesome.min.css", :rel => "stylesheet", :type => "text/css"}
     %link{:href => "http://fonts.googleapis.com/css?family=Montserrat:400,700", :rel => "stylesheet", :type => "text/css"}
     %link{:href => "http://fonts.googleapis.com/css?family=Lato:400,700,400italic,700italic", :rel => "stylesheet", :type => "text/css"}
     / HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries
@@ -21,4 +21,39 @@
     = javascript_include_tag 'application', 'data-turbolinks-track' => true
     = csrf_meta_tags
   %body#page-top.index
+    / Navigation
+    %nav.navbar.navbar-default.navbar-fixed-top
+      .container
+        / Brand and toggle get grouped for better mobile display
+        .navbar-header.page-scroll
+          %button.navbar-toggle{"data-target" => "#bs-example-navbar-collapse-1", "data-toggle" => "collapse", :type => "button"}
+            %span.sr-only Toggle navigation
+            %span.icon-bar
+            %span.icon-bar
+            %span.icon-bar
+          %a.navbar-brand{:href => "#page-top"} Jitney in Route
+        / Collect the nav links, forms, and other content for toggling
+        #bs-example-navbar-collapse-1.collapse.navbar-collapse
+          %ul.nav.navbar-nav.navbar-right
+            %li.hidden
+              %a{:href => "#page-top"}
+            %li.page-scroll
+              %a{:href => "#portfolio"} Portfolio
+            %li.page-scroll
+              %a{:href => "#about"} About
+            %li.page-scroll
+              %a{:href => "#contact"} Contact
+            / %li.page-scroll
+            /   %a{:href => "/users/sign_up"} Register
+            / %li.page-scroll
+            /   %a{:href => "/users/sign_in"} Login
+            -if current_user == nil
+              %li.page-scroll
+                %a{"data-toggle" => "modal", :href => "#registerModal"} Register
+              %li.page-scroll
+                %a{"data-toggle" => "modal", :href => "#loginModal"} Login
+            -else
+              %li.page-scroll
+                = link_to 'My profile', user_path(current_user)
+               
     = yield
