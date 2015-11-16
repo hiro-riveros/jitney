@@ -17,6 +17,6 @@
 .rbenv-vars
 .powder
 /Gemfile.lock
-
+*.DS_Store
 # Ignore bower packages
 /vendor/assets/bower_components
