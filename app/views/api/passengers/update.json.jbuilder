@@ -1,0 +1,1 @@
+json.extract! @passenger, :id, :user_id, :name, :last_name, :slast_name, :email, :password
