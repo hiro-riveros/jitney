@@ -5,3 +5,44 @@
 #
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
+
+Position.create!(
+  latitude: -33.4620582,
+  longitude: -70.7011462,
+  perimeter: 0
+)
+
+Position.create!(
+  latitude: -33.4620582,
+  longitude: -70.7011462,
+  perimeter: 0
+)
+
+Jitney.create!(
+  email: 'jitney@user.com',
+  password: '12345678',
+  password_confirmation: '12345678',
+  name: 'jitney',
+  last_name: 'jitney test',
+  route: 'plaza maipu, las rejas',
+  automatic_map: true,
+  position_id: 1
+)
+
+Passenger.create!(
+  email: 'passenger@user.com',
+  password: '12345678',
+  password_confirmation: '12345678',
+  name: 'passenger',
+  last_name: 'passenger test',
+  frequent_destiny: 'las rejas',
+  automatic_map: true,
+  position_id: 2
+)
+
+Car.create!(
+	jitney_id: 1,
+	patent: 'sa9068',
+	model: 'corsa',
+	route: 'pajarito, las rejas'
+)
