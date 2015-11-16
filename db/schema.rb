@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20151025161905) do
+ActiveRecord::Schema.define(version: 20151115215426) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -22,6 +22,16 @@ ActiveRecord::Schema.define(version: 20151025161905) do
     t.string   "description"
     t.datetime "created_at",  null: false
     t.datetime "updated_at",  null: false
+  end
+
+  create_table "cars", force: :cascade do |t|
+    t.integer  "jitney_id"
+    t.string   "patent"
+    t.string   "model"
+    t.string   "route"
+    t.integer  "passengers",              array: true
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
   create_table "documents", force: :cascade do |t|
@@ -42,12 +52,36 @@ ActiveRecord::Schema.define(version: 20151025161905) do
 
   add_index "identities", ["user_id"], name: "index_identities_on_user_id", using: :btree
 
+  create_table "jitneys", force: :cascade do |t|
+    t.integer  "position_id"
+    t.string   "route"
+    t.boolean  "automatic_map"
+    t.datetime "created_at",    null: false
+    t.datetime "updated_at",    null: false
+  end
+
+  create_table "passengers", force: :cascade do |t|
+    t.integer  "position_id"
+    t.json     "frequent_destiny"
+    t.boolean  "automatic_map"
+    t.datetime "created_at",       null: false
+    t.datetime "updated_at",       null: false
+  end
+
   create_table "plans", force: :cascade do |t|
     t.string   "name"
     t.integer  "price"
     t.string   "description"
     t.datetime "created_at",  null: false
     t.datetime "updated_at",  null: false
+  end
+
+  create_table "positions", force: :cascade do |t|
+    t.float    "latitude"
+    t.float    "longitude"
+    t.json     "perimeter"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
   create_table "products", force: :cascade do |t|
@@ -85,10 +119,10 @@ ActiveRecord::Schema.define(version: 20151025161905) do
     t.datetime "last_sign_in_at"
     t.inet     "current_sign_in_ip"
     t.inet     "last_sign_in_ip"
-    t.string   "confirmation_token"
-    t.datetime "confirmed_at"
-    t.datetime "confirmation_sent_at"
-    t.string   "unconfirmed_email"
+    t.integer  "actable_id"
+    t.string   "actable_type"
+    t.datetime "created_at",                          null: false
+    t.datetime "updated_at",                          null: false
     t.string   "name"
     t.integer  "account_type"
     t.integer  "age"
