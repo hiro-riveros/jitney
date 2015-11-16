@@ -4,8 +4,9 @@ class User < ActiveRecord::Base
 
   # Include default devise modules. Others available are:
   # :lockable, :timeoutable
-  devise :database_authenticatable, :registerable, :confirmable,
-    :recoverable, :rememberable, :trackable, :validatable, :omniauthable
+
+  devise :database_authenticatable, :registerable,
+    :recoverable, :rememberable, :trackable, :omniauthable#, :validatable, :confirmable,
 
   validates_format_of :email, :without => TEMP_EMAIL_REGEX, on: :update
 
@@ -54,4 +55,25 @@ class User < ActiveRecord::Base
   def email_verified?
     self.email && self.email !~ TEMP_EMAIL_REGEX
   end
+
+  ## STATIC VALUES
+  # To add a new role, include it on the list.
+  ROLES = %W[admin_user passenger jitney]
+  
+  ## ACT ASS SUPERCLASS
+  actable
+  ## INSTANCE METHODS
+  ROLES.each do |role_name|
+    define_method "#{role_name}?".to_sym do
+      self.role?.present? && (self.role?.eql? role_name)
+    end
+  end
+  
+  def role?
+    self.actable_type.underscore
+  end
+
+
+
+
 end 

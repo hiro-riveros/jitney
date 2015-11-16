@@ -32,6 +32,8 @@ gem 'premailer-rails'
 gem 'nokogiri'
 # Simple (but safe) token authentication for Rails apps or API with Devise.
 gem 'simple_token_authentication', '~> 1.0'
+# Use heritage for admin_users (manage role). Read more: https://github.com/hzamani/acts_as_relation
+gem 'active_record-acts_as'
 
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
@@ -45,14 +47,14 @@ gem 'capistrano-rails', group: :development
 group :development, :test do
   gem "rspec-rails"
   gem "factory_girl_rails"
-  #gem "pry-byebug"
+  gem "pry-byebug"
   gem "zeus"
   gem "guard-rspec", require: false
   gem "rspec-nc", require: false
   gem "pry-rails"
   gem "faker"
   gem "quiet_assets"
-  #gem "better_errors"
+  gem "better_errors"
   gem "binding_of_caller"
 end
 
