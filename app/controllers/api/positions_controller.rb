@@ -12,7 +12,7 @@ module Api
 
 		## TO-DO CREATE POSITION USING PASSENGER OR JITNEY MODEL
 		def create
-			@position = Position.new(params[:user_id], params[:latitude], params[:longitude], params[:petimeter])
+			@position = Position.new(user_id: params[:user_id], latitude: params[:latitude], longitude: params[:longitude], petimeter: params[:petimeter])
 			if @position.save
 				respond_with(@position)
 			else

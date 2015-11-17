@@ -53,7 +53,6 @@ ActiveRecord::Schema.define(version: 20151115215426) do
   add_index "identities", ["user_id"], name: "index_identities_on_user_id", using: :btree
 
   create_table "jitneys", force: :cascade do |t|
-    t.integer  "position_id"
     t.string   "route"
     t.boolean  "automatic_map"
     t.datetime "created_at",    null: false
@@ -61,7 +60,6 @@ ActiveRecord::Schema.define(version: 20151115215426) do
   end
 
   create_table "passengers", force: :cascade do |t|
-    t.integer  "position_id"
     t.json     "frequent_destiny"
     t.boolean  "automatic_map"
     t.datetime "created_at",       null: false
@@ -77,6 +75,7 @@ ActiveRecord::Schema.define(version: 20151115215426) do
   end
 
   create_table "positions", force: :cascade do |t|
+    t.integer  "user_id"
     t.float    "latitude"
     t.float    "longitude"
     t.json     "perimeter"

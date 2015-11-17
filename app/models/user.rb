@@ -1,6 +1,11 @@
 class User < ActiveRecord::Base
+  
+  ## RELATIONS
+  has_many :positions
+
   TEMP_EMAIL_PREFIX = 'change@me'
   TEMP_EMAIL_REGEX = /\Achange@me/
+
 
   # Include default devise modules. Others available are:
   # :lockable, :timeoutable

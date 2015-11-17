@@ -1,5 +1,6 @@
 class Position < ActiveRecord::Base
-	has_many :passengers
-	has_many :jitneys
+
+	## RELATIONS
+	belongs_to :user
 
 end
