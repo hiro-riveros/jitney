@@ -429,16 +429,16 @@
       .field
         %label{:for => "user_email"} Email
         %br
-        %input.input-group#user_email{:autofocus => "autofocus", :name => "user[email]", :type => "email", :value => ""}
+        %input#user_email{:autofocus => "autofocus", :name => "user[email]", :type => "email", :value => ""}
       .field
         %label{:for => "user_password"} Password
         %em (8 characters minimum)
         %br
-        %input.input-group#user_password{:autocomplete => "off", :name => "user[password]", :type => "password"}
+        %input#user_password{:autocomplete => "off", :name => "user[password]", :type => "password"}
       .field
         %label{:for => "user_password_confirmation"} Password confirmation
         %br
-        %input.input-group#user_password_confirmation{:autocomplete => "off", :name => "user[password_confirmation]", :type => "password"}
+        %input#user_password_confirmation{:autocomplete => "off", :name => "user[password_confirmation]", :type => "password"}
       .actions
         %input.btn.btn-default{:name => "commit", :type => "submit", :value => "Sign up"}
 
@@ -474,11 +474,11 @@
       .field
         %label{:for => "user_email"} Email
         %br
-        %input.input-group#user_email{:autofocus => "autofocus", :name => "user[email]", :type => "email", :value => ""}
+        %input#user_email{:autofocus => "autofocus", :name => "user[email]", :type => "email", :value => ""}
       .field
         %label{:for => "user_password"} Password
         %br
-        %input.input-group#user_password{:autocomplete => "off", :name => "user[password]", :type => "password"}
+        %input#user_password{:autocomplete => "off", :name => "user[password]", :type => "password"}
       .field
         %input{:name => "user[remember_me]", :type => "hidden", :value => "0"}
         %input#user_remember_me{:name => "user[remember_me]", :type => "checkbox", :value => "1"}
