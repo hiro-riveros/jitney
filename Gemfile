@@ -35,6 +35,8 @@ gem 'simple_token_authentication', '~> 1.0'
 # Use heritage for admin_users (manage role). Read more: https://github.com/hzamani/acts_as_relation
 gem 'active_record-acts_as'
 
+gem 'therubyracer'
+
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
 
