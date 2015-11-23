@@ -3,7 +3,7 @@ Rails.application.routes.draw do
   #get 'landing#contact'
   #get 'landing#about'
 
-  devise_for :users#, :controllers => { omniauth_callbacks: 'omniauth_callbacks' }
+  devise_for :users, :controllers => { omniauth_callbacks: 'omniauth_callbacks' }
 
   root 'welcome#index'
 
@@ -24,7 +24,7 @@ Rails.application.routes.draw do
 
   namespace :api, path: '/api', defaults: { format: :json} do
 
-    devise_for :users, :controllers => {:sessions => 'api/sessions'}
+    #devise_for :users, :controllers => {:sessions => 'api/sessions'}
 
     resources :users, only:  [:index, :create, :show, :delete]
     resources :passengers, only:  [:index, :create, :show, :delete]
