@@ -9,7 +9,8 @@
     <title>colectifacil</title>
     <!-- Custom Fonts
     -->
-    <link href="font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css"></link>
+    <!--%link{:href => "font-awesome/css/font-awesome.min.css", :rel => "stylesheet", :type => "text/css"}
+    -->
     <link href="http://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet" type="text/css"></link>
     <link href="http://fonts.googleapis.com/css?family=Lato:400,700,400italic,700italic" rel="stylesheet" type="text/css"></link>
     <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries
@@ -25,7 +26,64 @@
     <%= csrf_meta_tags %>
   </head>
   <body class="index" id="page-top">
+    <!-- Navigation
+    -->
+    <nav class="navbar navbar-default navbar-fixed-top">
+      <div class="container">
+        <!-- Brand and toggle get grouped for better mobile display
+        -->
+        <div class="navbar-header page-scroll">
+          <button class="navbar-toggle" data-target="#bs-example-navbar-collapse-1" data-toggle="collapse" type="button">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="navbar-brand" href="#page-top">Jitney in Route</a>
+        </div>
+        <!-- Collect the nav links, forms, and other content for toggling
+        -->
+        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+          <ul class="nav navbar-nav navbar-right">
+            <li class="hidden">
+              <a href="#page-top"></a>
+            </li>
+            <!-- <li class="page-scroll">
+              <a href="#portfolio">Portfolio</a>
+            </li> -->
+            <li class="page-scroll">
+              <a href="#about">About</a>
+            </li>
+            <!-- <li class="page-scroll">
+              <a href="#contact">Contact</a>
+            </li> -->
+            <!-- %li.page-scroll
+            -->
+            <!--   %a{:href => "/users/sign_up"} Register
+            -->
+            <!-- %li.page-scroll
+            -->
+            <!--   %a{:href => "/users/sign_in"} Login
+            -->
+            <% if current_user == nil %>
+              <li class="page-scroll">
+                <a data-toggle="modal" href="#registerModal">Register</a>
+              </li>
+              <li class="page-scroll">
+                <a data-toggle="modal" href="#loginModal">Login</a>
+              </li>
+            <% else %>
+              <li class="page-scroll">
+                <%= link_to 'My profile', "profile/#{current_user.id}" %>
+              </li>
+              <li class="page-scroll">
+                <%= link_to "Sign out", destroy_user_session_path, :method => :delete %>
+              </li>
+            <% end %>
+          </ul>
+        </div>
+      </div>
+    </nav>
     <%= yield %>
   </body>
 </html>
-
