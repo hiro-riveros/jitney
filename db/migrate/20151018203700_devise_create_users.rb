@@ -32,13 +32,14 @@ class DeviseCreateUsers < ActiveRecord::Migration
 
       # act as superclass
       t.actable
-
+      t.string :authentication_token
       # Uncomment below if timestamps were not included in your original model.
       t.timestamps null: false
     end
 
     add_index :users, :email,                unique: true
     add_index :users, :reset_password_token, unique: true
+    add_index :users, :authentication_token
     # add_index :users, :confirmation_token,   unique: true
     # add_index :users, :unlock_token,         unique: true
   end

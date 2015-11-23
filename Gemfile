@@ -30,6 +30,7 @@ gem 'rails-i18n'
 # Making HTML emails comfortable for the Rails rockstars
 gem 'premailer-rails'
 gem 'nokogiri'
+
 # Simple (but safe) token authentication for Rails apps or API with Devise.
 gem 'simple_token_authentication', '~> 1.0'
 # Use heritage for admin_users (manage role). Read more: https://github.com/hzamani/acts_as_relation

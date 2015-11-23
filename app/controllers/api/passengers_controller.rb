@@ -2,6 +2,15 @@ module Api
   class PassengersController < Api::ApiController
     before_action :set_passenger, only: [:show , :update , :destroy]
 
+    def index
+      @passengers = Passenger.all
+      if @passengers 
+        respond_with(@passengers)
+      else
+        respond_with(@passengers)
+      end
+    end
+
     def show
       if @passenger
         respond_with(@passenger)

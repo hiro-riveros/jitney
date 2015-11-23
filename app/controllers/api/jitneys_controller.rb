@@ -2,6 +2,15 @@ module Api
   class jitneysController < Api::ApiController
       before_action :set_jitney, only: [:show , :update , :destroy]
 
+      def index
+        @jitney = Jitney.all
+        if @jitney
+          respond_with(@jitney)
+        else
+          respond_with(@jitney)
+        end
+      end
+
       def show
         if @jitney
           respond_with(@jitney)
