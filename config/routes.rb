@@ -3,7 +3,7 @@ Rails.application.routes.draw do
   #get 'landing#contact'
   #get 'landing#about'
 
-  devise_for :users, :controllers => { omniauth_callbacks: 'omniauth_callbacks' }
+  devise_for :users#, :controllers => { omniauth_callbacks: 'omniauth_callbacks' }
 
   root 'welcome#index'
 
