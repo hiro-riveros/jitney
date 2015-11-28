@@ -72,9 +72,20 @@
               <li class="page-scroll">
                 <a data-toggle="modal" href="#loginModal">Login</a>
               </li>
-            <% else %>
+              <% else %>
+              <% if current_user.account_type != nil %>
+                <% if current_user.account_type != 1 %>
+                  <li class="page-scroll">
+                    <%= link_to 'Últimos Recorridos', "/user_histories/#{current_user.id}" %>
+                  </li>
+                <% else %>
+                  <li class="page-scroll">
+                    <%= link_to 'Últimos Recorridos', "/user_histories" %>
+                  </li>
+                <% end %>
+              <% end %>
               <li class="page-scroll">
-                <%= link_to 'My profile', "profile/#{current_user.id}" %>
+                <%= link_to 'My profile', "/profile/#{current_user.id}" %>
               </li>
               <li class="page-scroll">
                 <%= link_to "Sign out", destroy_user_session_path, :method => :delete %>

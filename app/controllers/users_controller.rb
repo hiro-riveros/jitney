@@ -8,6 +8,14 @@ class UsersController < ApplicationController
     #raise current_user.inspect
   end
 
+  def index
+    if current_user.account_type == 1
+      @users = User.all
+    else
+      redirect_to "/profile/#{current_user.id}"
+    end
+  end
+
   def get_profile
 
   end

@@ -4,14 +4,14 @@ Rails.application.routes.draw do
   #get 'landing#about'
 
   #devise_for :users#, :controllers => { omniauth_callbacks: 'omniauth_callbacks' }
-  devise_for :users, :controllers => {sessions: 'sessions', registrations: 'registrations'} 
+  devise_for :users#, :controllers => {sessions: 'sessions', registrations: 'registrations'} 
 
   root 'welcome#index'
 
   resources :products
   resources :plan
   resources :account_type
-  resources :user_history
+  resources :user_histories
   resources :user_problems
   resources :document
 

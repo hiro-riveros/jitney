@@ -5,6 +5,8 @@ class User < ActiveRecord::Base
   
   ## RELATIONS
   has_many :positions
+  has_many :user_problems
+  has_many :user_histories
 
   TEMP_EMAIL_PREFIX = 'change@me'
   TEMP_EMAIL_REGEX = /\Achange@me/

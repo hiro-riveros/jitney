@@ -53,8 +53,15 @@
               %li.page-scroll
                 %a{"data-toggle" => "modal", :href => "#loginModal"} Login
             -else
+              - if current_user.account_type != nil
+                - if current_user.account_type != 1
+                  %li.page-scroll
+                    = link_to 'Últimos Recorridos', "/user_history/#{current_user.id}"
+                - else
+                  %li.page-scroll
+                    = link_to 'Últimos Recorridos', "/user_history"
               %li.page-scroll
-                = link_to 'My profile', "profile/#{current_user.id}"
+                = link_to 'My profile', "/profile/#{current_user.id}"
               %li.page-scroll
                 = link_to "Sign out", destroy_user_session_path, :method => :delete
                
