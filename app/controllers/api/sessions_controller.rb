@@ -6,12 +6,13 @@ module Api
     # This controller provides a JSON version of the Devise::SessionsController and
     # is compatible with the use of SimpleTokenAuthentication.
     # See https://github.com/gonzalo-bulnes/simple_token_authentication/issues/27
-    binding.pry
+    #binding.pry
     def create
-      binding.pry
+      #binding.pry
+      #raise params.inspect
       # Fetch params
-      email = params[:sign_in][:email] if params[:sign_in][:email]
-      password = params[:sign_in][:password] if params[:sign_in][:password]
+      email = params[:email] if params[:email]
+      password = params[:password] if params[:password]
 
       id = User.find_by(email: email).try(:id) if email.presence
 
