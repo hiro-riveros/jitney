@@ -13,7 +13,7 @@ development:
   encoding: utf8
   database: jitney
   pool: 5
-  username: postgres
-  password: postgres
+  username: hirochi
+  password: 123456
   host: localhost
   port: 5432

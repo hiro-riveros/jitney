@@ -42,13 +42,14 @@ Rails.application.routes.draw do
       delete 'logout' => 'sessions#destroy', :as => :logout
     end
 
-    resources :passengers, only:  [:index, :create, :show, :delete]
-    resources :jitneys, only:  [:index, :create, :show, :delete]
+    resources :users, only:  [:index, :create, :show, :delete, :update]
+    resources :passengers, only:  [:index, :create, :update, :show, :edit]
+    resources :jitneys, only:  [:index, :create, :update, :show, :edit]
     resources :positions, only: [:index, :create, :update, :show]
-    resources :cars, only: [:index, :create, :update, :show]
+    resources :cars, only: [:index, :create, :update, :show, :edit]
   end
 
 
-  #match '*any' => 'application#options', :via => [:options, :post, :delete, :update, :put, :patch]
+  match '*any' => 'application#options', :via => [:options, :post, :delete, :update, :put, :patch]
 
 end

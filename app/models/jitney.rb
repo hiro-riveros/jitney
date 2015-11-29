@@ -5,5 +5,6 @@ class Jitney < ActiveRecord::Base
 
   ## RELATIONS
   belongs_to :position
+  has_many :cars
   
 end

@@ -5,7 +5,7 @@ class CreateCars < ActiveRecord::Migration
       t.string :patent
       t.string :model
       t.string :route
-      t.integer :passengers, array: true 
+      t.integer :passengers
       
       t.timestamps null: false
     end

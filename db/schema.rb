@@ -29,7 +29,7 @@ ActiveRecord::Schema.define(version: 20151128064339) do
     t.string   "patent"
     t.string   "model"
     t.string   "route"
-    t.integer  "passengers",              array: true
+    t.integer  "passengers"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end

@@ -1,6 +1,7 @@
 module Api
 	class CarsController < ApplicationController
-		before_filter :set_car, only: [:show]
+		respond_to :json
+		before_filter :set_car, only: [:show, :update]
 
 		def show
 			if @car
@@ -20,7 +21,7 @@ module Api
 		end
 
 		def update
-			@car = Car.update(jitney_id: params[:jitney_id], patent: params[:patent], model: params[:model], route: params[:route], passengers: params[:passengers])
+			@car = Car.update(params[:id], :passengers => params[:passengers].to_i)
 			if @car.save
 				respond_with(@car)
 			else
@@ -30,7 +31,7 @@ module Api
 
 		private
 		def set_car
-			@car = Cars.find(params[:id]) if params[:id]
+			@car = Car.find(params[:id]) if params[:id]
 		end
 	end
 end

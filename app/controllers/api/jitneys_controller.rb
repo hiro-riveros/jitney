@@ -1,13 +1,13 @@
 module Api
-  class jitneysController < Api::ApiController
+  class JitneysController < Api::ApiController
       before_action :set_jitney, only: [:show , :update , :destroy]
 
       def index
-        @jitney = Jitney.all
-        if @jitney
-          respond_with(@jitney)
+        @jitneys = Jitney.all
+        if @jitneys
+          respond_with(@jitneys)
         else
-          respond_with(@jitney)
+          respond_with(@jitneys)
         end
       end
 
@@ -30,13 +30,12 @@ module Api
       end
 
       def update
-        respond_to do |format|
-          if @jitney.update(params)
-            respond_with(@jitney)
-          else
-            respond_with(@jitney)
-          end
-        end
+        @jitney = Jitney.update(params[:id], :automatic_map => params[:automatic_map])
+        if @jitney.save
+          respond_with(@jitney)
+        else
+          respond_with(@jitney)
+        end 
       end
 
       def destroy
