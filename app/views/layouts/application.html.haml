@@ -57,6 +57,8 @@
                 - if current_user.account_type != 1
                   %li.page-scroll
                     = link_to 'Últimos Recorridos', "/user_history/#{current_user.id}"
+                  %li.page-scroll
+                    = link_to 'Tipos de cuentas', "/account_types/"
                 - else
                   %li.page-scroll
                     = link_to 'Últimos Recorridos', "/user_history"

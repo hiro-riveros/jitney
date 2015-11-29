@@ -10,7 +10,7 @@ Rails.application.routes.draw do
 
   resources :products
   resources :plan
-  resources :account_type
+  resources :account_types
   resources :user_histories
   resources :user_problems
   resources :document

@@ -48,13 +48,13 @@
             <li class="hidden">
               <a href="#page-top"></a>
             </li>
-            <!-- <li class="page-scroll">
+<!--             <li class="page-scroll">
               <a href="#portfolio">Portfolio</a>
-            </li> -->
+            </li>
             <li class="page-scroll">
               <a href="#about">About</a>
             </li>
-            <!-- <li class="page-scroll">
+            <li class="page-scroll">
               <a href="#contact">Contact</a>
             </li> -->
             <!-- %li.page-scroll
@@ -72,15 +72,18 @@
               <li class="page-scroll">
                 <a data-toggle="modal" href="#loginModal">Login</a>
               </li>
-              <% else %>
+            <% else %>
               <% if current_user.account_type != nil %>
                 <% if current_user.account_type != 1 %>
                   <li class="page-scroll">
-                    <%= link_to 'Últimos Recorridos', "/user_histories/#{current_user.id}" %>
+                    <%= link_to 'Últimos Recorridos', "/user_history/#{current_user.id}" %>
                   </li>
                 <% else %>
                   <li class="page-scroll">
-                    <%= link_to 'Últimos Recorridos', "/user_histories" %>
+                    <%= link_to 'Últimos Recorridos', "/user_history" %>
+                  </li>
+                  <li class="page-scroll">
+                    <%= link_to 'Tipos de cuentas', "/account_types/" %>
                   </li>
                 <% end %>
               <% end %>
