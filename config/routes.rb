@@ -48,6 +48,7 @@ Rails.application.routes.draw do
     resources :jitneys, only:  [:index, :create, :update, :show, :edit]
     resources :positions, only: [:index, :create, :update, :show]
     resources :cars, only: [:index, :create, :update, :show, :edit]
+    
   end
 
 
