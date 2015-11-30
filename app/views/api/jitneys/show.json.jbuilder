@@ -10,3 +10,4 @@ json.last_name @jitney.user.last_name
 json.password @jitney.user.password 
 json.actable_type @jitney.user.actable_type 
 json.authentication_token @jitney.user.authentication_token
+json.is_active @jitney.user.is_active

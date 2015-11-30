@@ -7,4 +7,5 @@ json.last_name @passenger.user.last_name
 json.password @passenger.user.password 
 json.actable_type @passenger.user.actable_type 
 json.authentication_token @passenger.user.authentication_token
+json.is_active @passenger.user.is_active
 

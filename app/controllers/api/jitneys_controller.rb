@@ -3,7 +3,7 @@ module Api
       before_action :set_jitney, only: [:show , :update , :destroy]
 
       def index
-        @jitneys = Jitney.all
+        @jitneys = Jitney.all.where(:is_active => true)
         if @jitneys
           respond_with(@jitneys)
         else

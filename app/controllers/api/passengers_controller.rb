@@ -3,7 +3,7 @@ module Api
     before_action :set_passenger, only: [:show , :update , :destroy]
 
     def index
-      @passengers = Passenger.all
+      @passengers = Passenger.all.where(:is_active => true)
       if @passengers 
         respond_with(@passengers)
       else

@@ -8,7 +8,6 @@ module Api
     # See https://github.com/gonzalo-bulnes/simple_token_authentication/issues/27
     #binding.pry
     def create
-      #binding.pry
       #raise params.inspect
       # Fetch params
       email = params[:email] if params[:email]
@@ -32,7 +31,8 @@ module Api
 
       if user
         if user.valid_password? password
-          # user.reset_authentication_token!
+          user.authentication_token = nil
+          user.is_active = true
           # Note that the data which should be returned depends heavily of the API client needs.
           user.authentication_token ||= Devise.friendly_token
           user.save if user.authentication_token_changed?
@@ -47,12 +47,14 @@ module Api
 
     def destroy
       # Fetch params
-      user = User.find_by(authentication_token: params[:user_token])
+      user = User.find_by(authentication_token: params[:authentication_token])
 
       if user.nil?
         render status: 404, json: { message: 'Invalid token.' }
       else
+        binding.pry
         user.authentication_token = nil
+        user.is_active = false
         user.save!
         render status: 204, json: nil
       end

@@ -23,21 +23,22 @@ class ApplicationController < ActionController::Base
   end
   def cors_set_access_control_headers
     headers['Access-Control-Allow-Origin']  = '*'
-    headers['Access-Control-Allow-Methods'] = 'POST, GET, PUT, DELETE, OPTIONS'
+    headers['Access-Control-Allow-Methods'] = 'POST, GET, PUT, DELETE, OPTIONS, PATCH'
     headers['Access-Control-Allow-Headers'] = 'Origin, Content-Type, Accept, Authorization, Token'
     headers['Access-Control-Max-Age']       = '1728000'
   end
 
   def options                                                                                                                                                                                                                                                                             
     head :status => 200, :'Access-Control-Allow-Headers' => 'Accept, Content-type, X-Requested-With, X-Prototype-Version, X-AdminUser-Email, X-AdminUser-Token' 
-    head :status => 200, :'Access-Control-Allow-Methods' => 'POST, PUT, PATCH, DELETE, GET, OPTIONS' 
+    head :status => 200, :'Access-Control-Allow-Methods' => 'POST, PUT, PATCH, DELETE, GET, OPTIONS'
   end
   
   def cors_preflight_check
     if request.method == 'OPTIONS'
+      binding.pry
       headers['Access-Control-Allow-Origin']  = '*'
-      headers['Access-Control-Allow-Methods'] = 'POST, GET, PUT, DELETE, OPTIONS'
-      headers['Access-Control-Allow-Headers'] = 'X-Requested-With, X-Prototype-Version, Token'
+      headers['Access-Control-Allow-Methods'] = 'POST, GET, PUT, DELETE, OPTIONS, PATCH'
+      headers['Access-Control-Allow-Headers'] = 'X-Requested-With, X-Prototype-Version, Token, accept, Content-type'
       headers['Access-Control-Max-Age']       = '1728000'
 
       render :text => '', :content_type => 'text/plain'
