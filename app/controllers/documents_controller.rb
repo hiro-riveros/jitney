@@ -46,7 +46,8 @@ class DocumentsController < ApplicationController
 		@document.status = params[:status]
 		@document.save
 
-		#@user = User.find params[:document][:user_id]
+		@user = User.find params[:document][:user_id]
+		@user.actable_type = "Jitney"
 		#TODO
 		#@jitney = Jitney.new
 

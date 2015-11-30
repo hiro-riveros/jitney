@@ -1,5 +1,5 @@
 class User < ActiveRecord::Base
-  
+  after_create :set_actable
   # Enable API authentication
   acts_as_token_authenticatable 
   
@@ -85,7 +85,12 @@ class User < ActiveRecord::Base
     self.actable_type.underscore
   end
 
-
+  def set_actable
+    #binding.pry
+    @user = User.last
+    @user.actable_type = "Passenger"
+    @user.save
+  end
 
 
 end 
