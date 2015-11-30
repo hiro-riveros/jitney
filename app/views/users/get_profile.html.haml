@@ -31,15 +31,15 @@
                 %table.table.table-user-information
                   %tbody
                     %tr
-                      %td Last name:
+                      %td Apellido paterno:
                       %td 
                         #{current_user.last_name}
                     %tr
-                      %td Second last name:
+                      %td Apellido materno:
                       %td 
                         #{current_user.slast_name}
                     %tr
-                      %td Age
+                      %td Edad
                       %td
                         #{current_user.age}
                     /%tr
@@ -47,7 +47,7 @@
                     /%td 
                     / #{current_user.confirmed_at}
                     %tr
-                      %td Email
+                      %td Correo
                       %td
                         /%a{:href => "mailto:info@support.com"} info@support.com
                         #{current_user.email}
@@ -67,6 +67,10 @@
             %span.pull-right
               %a.btn.btn-sm.btn-warning{"data-original-title" => "editar perfil", "data-toggle" => "tooltip", :href => "/users/#{current_user.id}/edit", :type => "button"}
                 %i.glyphicon.glyphicon-edit
+              - if current_user.account_type == 2
+                %a.btn.btn-sm.btn-primary{"data-original-title" => "suscribirme", "data-toggle" => "tooltip", :href => "/transactions/new", :type => "button"}
+                  %i.glyphicon.glyphicon-edit
+                %a.btn.btn-sm.btn-primary{"data-original-title" => "documentación para acreditación", "data-toggle" => "tooltip", :href => "/documents", :type => "button"}
+                  %i.glyphicon.glyphicon-envelope
               /%a.btn.btn-sm.btn-danger{"data-original-title" => "Remove this user", "data-toggle" => "tooltip", :type => "button"}
               /%i.glyphicon.glyphicon-remove
-  }

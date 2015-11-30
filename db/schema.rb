@@ -12,7 +12,6 @@
 # It's strongly recommended that you check this file into your version control system.
 
 ActiveRecord::Schema.define(version: 20151130010613) do
-
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
@@ -29,7 +28,7 @@ ActiveRecord::Schema.define(version: 20151130010613) do
     t.string   "patent"
     t.string   "model"
     t.string   "route"
-    t.integer  "passengers"
+    t.integer  "passengers",              array: true
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
@@ -40,6 +39,8 @@ ActiveRecord::Schema.define(version: 20151130010613) do
     t.string   "path"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string   "status"
+    t.integer  "user_id"
   end
 
   create_table "identities", force: :cascade do |t|
@@ -91,13 +92,15 @@ ActiveRecord::Schema.define(version: 20151130010613) do
     t.datetime "updated_at",  null: false
   end
 
-  create_table "sessions", force: :cascade do |t|
-    t.integer  "user_id"
-    t.string   "emai"
-    t.string   "password"
-    t.boolean  "is_active"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+  create_table "transactions", force: :cascade do |t|
+    t.integer "user_id"
+    t.string  "client_token"
+    t.integer "amount"
+    t.integer "product_id"
+    t.string  "response_status"
+    t.string  "response_comment"
+    t.string  "bank_name"
+    t.string  "transaction_type"
   end
 
   create_table "user_histories", force: :cascade do |t|

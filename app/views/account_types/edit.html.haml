@@ -9,11 +9,11 @@
       .col-xs-12.col-sm-12.col-md-6.col-lg-6.col-xs-offset-0.col-sm-offset-0.col-md-offset-3.col-lg-offset-3.toppad
         .panel.panel-info
           .panel-heading
-            %h3.panel-title #{current_user.name}
+            %h3.panel-title Editar tipo de cuenta
           .panel-body
             .row
-              .col-md-3.col-lg-3{:align => "center"}
-                %img.img-circle.img-responsive{:alt => "User Pic", :src => "http://babyinfoforyou.com/wp-content/uploads/2014/10/avatar-300x300.png"}/
+            /.col-md-3.col-lg-3{:align => "center"}
+                /%img.img-circle.img-responsive{:alt => "User Pic", :src => "http://babyinfoforyou.com/wp-content/uploads/2014/10/avatar-300x300.png"}/
               /
                 <div class="col-xs-10 col-sm-10 hidden-md hidden-lg"> <br>
                 <dl>
@@ -27,8 +27,8 @@
                 <dd>Male</dd>
                 </dl>
                 </div>
-              .col-md-9.col-lg-9
-                = form_for current_user , url: {action: 'update'}, html: {class: 'nifty_form'} do |f|
+              .col-md-12.col-lg-12
+                = form_for @account_type , url: {action: 'update'}, html: {class: 'nifty_form'} do |f|
                   %table.table.table-user-information
                     %tbody
                       / %tr
@@ -38,31 +38,20 @@
                       /   %td Hire date:
                       /   %td 06/23/2013
                       %tr
-                        %td Edad
-                        %td
-                          = f.text_field :age
-                      %tr
-                        %td Genero
-                        %td 
-                          = select_tag :gender, options_for_select([['Mujer', 'mujer'], ['Hombre', 'hombre']])
-                      %tr
-                        %td Correo
-                        %td #{current_user.email}
-                      %tr
                         %td Nombre
                         %td
-                          = f.text_field :name
+                        	= f.text_field :name
                       %tr
-                        %td Apellido paterno
-                        %td
-                          = f.text_field :last_name
+                        %td Privilegios
+                        %td 
+                        	= f.text_field :priviledges
                       %tr
-                        %td Apellido materno
-                        %td
-                          = f.text_field :slast_name
+                        %td Descripción
+                        %td 
+                        	= f.text_field :description
                       %tr
                         %td 
-                          = f.submit 'Save'
+                          = f.submit 'Guardar'
 
 
                             
