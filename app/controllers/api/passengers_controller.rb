@@ -30,13 +30,12 @@ module Api
     end
 
     def update
-      respond_to do |format|
-        if @passenger.update(params)
-          respond_with(@passenger)
-        else
-          respond_with(@passenger)
-        end
-      end
+      @passenger = Passenger.update(params[:id], :automatic_map => params[:automatic_map])
+      if @passenger.save
+        respond_with(@passenger)
+      else
+        respond_with(@passenger)
+      end 
     end
 
     def destroy

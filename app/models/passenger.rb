@@ -5,5 +5,4 @@ class Passenger < ActiveRecord::Base
 
   ## RELATIONS
   belongs_to :position
-  
 end

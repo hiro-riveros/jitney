@@ -1,1 +1,2 @@
-json.extract! @passenger, :id, :user_id, :name, :last_name, :slast_name, :email, :password
+## TO-DO extract passenger as user!
+json.extract! @passenger, :id, :automatic_map
