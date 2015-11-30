@@ -39,7 +39,7 @@
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
           </button>
-          <a class="navbar-brand" href="#page-top">Jitney in Route</a>
+          <a class="navbar-brand" href="/">Jitney in Route</a>
         </div>
         <!-- Collect the nav links, forms, and other content for toggling
         -->
@@ -67,7 +67,7 @@
             -->
             <% if current_user == nil %>
               <li class="page-scroll">
-                <a data-toggle="modal" href="#registerModal">Register</a>
+                <a data-toggle="modal" href="#registerModal">Registrarse</a>
               </li>
               <li class="page-scroll">
                 <a data-toggle="modal" href="#loginModal">Login</a>
@@ -76,22 +76,25 @@
               <% if current_user.account_type != nil %>
                 <% if current_user.account_type != 1 %>
                   <li class="page-scroll">
-                    <%= link_to 'Últimos Recorridos', "/user_history/#{current_user.id}" %>
+                    <%= link_to 'Últimos Recorridos', "/user_histories/#{current_user.id}" %>
                   </li>
                 <% else %>
                   <li class="page-scroll">
-                    <%= link_to 'Últimos Recorridos', "/user_history" %>
+                    <%= link_to 'Últimos Recorridos', "/user_histories" %>
                   </li>
                   <li class="page-scroll">
-                    <%= link_to 'Tipos de cuentas', "/account_types/" %>
+                    <%= link_to 'Tipos de cuentas', "/account_types" %>
+                  </li>
+                  <li class="page-scroll">
+                    <%= link_to 'Acreditaciones', "/documents" %>
                   </li>
                 <% end %>
               <% end %>
               <li class="page-scroll">
-                <%= link_to 'My profile', "/profile/#{current_user.id}" %>
+                <%= link_to 'Perfil', "/profile/#{current_user.id}" %>
               </li>
               <li class="page-scroll">
-                <%= link_to "Sign out", destroy_user_session_path, :method => :delete %>
+                <%= link_to "Salir", destroy_user_session_path, :method => :delete %>
               </li>
             <% end %>
           </ul>

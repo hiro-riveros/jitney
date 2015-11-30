@@ -9,11 +9,11 @@
       .col-xs-12.col-sm-12.col-md-6.col-lg-6.col-xs-offset-0.col-sm-offset-0.col-md-offset-3.col-lg-offset-3.toppad
         .panel.panel-info
           .panel-heading
-            %h3.panel-title Suscripción
+            %h3.panel-title Nuevo documento
           .panel-body
             .row
               .col-md-12.col-lg-12
-                = form_for @transaction , url: {action: 'create'}, html: {class: 'nifty_form'} do |f|
+                = form_for @document , url: {action: 'create'}, html: {class: 'nifty_form'} do |f|
                   %table.table.table-user-information
                     %tbody
                       / %tr
@@ -23,17 +23,17 @@
                       /   %td Hire date:
                       /   %td 06/23/2013
                       %tr
-                        %td Producto
+                        %td Nombre
                         %td
-                          = select_tag :product_id, options_for_select([['mensual $5.000', 1]])
+                          = f.text_field :name
                       %tr
-                        %td Banco
-                        %td
-                          = select_tag :bank_name, options_for_select([['falabella', 1], ['estado', 2], ['chile', 3], ['bci', 4]])
+                        %td Comentarios
+                        %td 
+                          = f.text_field :coment
                       %tr
-                        %td Medio de pago
-                        %td
-                          = select_tag :transaction_type, options_for_select([['débito', 'debito'], ['crédito', 'credito']])
+                        %td Documento de acreditación
+                        %td 
+                          = f.file_field :picture
                       %tr
                         %td 
                           = f.submit 'Guardar'
