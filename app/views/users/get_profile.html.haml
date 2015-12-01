@@ -62,15 +62,20 @@
           .panel-footer
             %a.btn.btn-sm.btn-primary{"data-original-title" => "reportar un prolema", "data-toggle" => "tooltip", :href => "/user_problems/new",:type => "button"}
               %i.glyphicon.glyphicon-envelope
+              &nbsp reportar
             %a.btn.btn-sm.btn-danger{"data-original-title" => "mis problemas", "data-toggle" => "tooltip", :href => "/user_problems",:type => "button"}
               %i.glyphicon.glyphicon-envelope
+              &nbsp mis reportes
             %span.pull-right
               %a.btn.btn-sm.btn-warning{"data-original-title" => "editar perfil", "data-toggle" => "tooltip", :href => "/users/#{current_user.id}/edit", :type => "button"}
                 %i.glyphicon.glyphicon-edit
+                &nbsp editar
               - if current_user.account_type == 2
                 %a.btn.btn-sm.btn-primary{"data-original-title" => "suscribirme", "data-toggle" => "tooltip", :href => "/transactions/new", :type => "button"}
                   %i.glyphicon.glyphicon-edit
+                  &nbsp suscribirme
                 %a.btn.btn-sm.btn-primary{"data-original-title" => "documentación para acreditación", "data-toggle" => "tooltip", :href => "/documents", :type => "button"}
                   %i.glyphicon.glyphicon-envelope
+                  &nbsp documentación
               /%a.btn.btn-sm.btn-danger{"data-original-title" => "Remove this user", "data-toggle" => "tooltip", :type => "button"}
               /%i.glyphicon.glyphicon-remove

@@ -1,0 +1,86 @@
+!!!
+%html
+  %head
+    %meta{:charset => "utf-8"}/
+    %meta{:content => "IE=edge", "http-equiv" => "X-UA-Compatible"}/
+    %meta{:content => "width=device-width, initial-scale=1", :name => "viewport"}/
+    %meta{:name => "description"}/
+    %meta{:name => "author"}/
+    %title colectifacil
+    /
+      Custom Fonts
+    /
+      \%link{:href => "font-awesome/css/font-awesome.min.css", :rel => "stylesheet", :type => "text/css"}
+    %link{:href => "http://fonts.googleapis.com/css?family=Montserrat:400,700", :rel => "stylesheet", :type => "text/css"}/
+    %link{:href => "http://fonts.googleapis.com/css?family=Lato:400,700,400italic,700italic", :rel => "stylesheet", :type => "text/css"}/
+    /
+      HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries
+    /
+      WARNING: Respond.js doesn't work if you view the page via file://
+    /
+      [if lt IE 9]
+    %script{:src => "https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"}
+    %script{:src => "https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"}
+    = stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true
+    = javascript_include_tag 'application', 'data-turbolinks-track' => true
+    = csrf_meta_tags
+  %body#page-top.index
+    /
+      Navigation
+    %nav.navbar.navbar-default.navbar-fixed-top
+      .container
+        /
+          Brand and toggle get grouped for better mobile display
+        .navbar-header.page-scroll
+          %button.navbar-toggle{"data-target" => "#bs-example-navbar-collapse-1", "data-toggle" => "collapse", :type => "button"}
+            %span.sr-only Toggle navigation
+            %span.icon-bar
+            %span.icon-bar
+            %span.icon-bar
+          %a.navbar-brand{:href => "/"} Jitney in Route
+        /
+          Collect the nav links, forms, and other content for toggling
+        #bs-example-navbar-collapse-1.collapse.navbar-collapse
+          %ul.nav.navbar-nav.navbar-right
+            %li.hidden
+              %a{:href => "#page-top"}
+            /
+              <li class="page-scroll">
+              <a href="#portfolio">Portfolio</a>
+              </li>
+              <li class="page-scroll">
+              <a href="#about">About</a>
+              </li>
+              <li class="page-scroll">
+              <a href="#contact">Contact</a>
+              </li>
+            /
+              \%li.page-scroll
+            /
+              \%a{:href => "/users/sign_up"} Register
+            /
+              \%li.page-scroll
+            /
+              \%a{:href => "/users/sign_in"} Login
+            - if current_user == nil
+              %li.page-scroll
+                %a{"data-toggle" => "modal", :href => "#registerModal"} Registrarse
+              %li.page-scroll
+                %a{"data-toggle" => "modal", :href => "#loginModal"} Login
+            - else
+              - if current_user.account_type != nil
+                - if current_user.account_type != 1
+                  %li.page-scroll
+                    = link_to 'Últimos Recorridos', "/user_histories/#{current_user.id}"
+                - else
+                  %li.page-scroll
+                    = link_to 'Últimos Recorridos', "/user_histories"
+                  %li.page-scroll
+                    = link_to 'Tipos de cuentas', "/account_types"
+                  %li.page-scroll
+                    = link_to 'Acreditaciones', "/documents"
+              %li.page-scroll
+                = link_to 'Perfil', "/profile/#{current_user.id}"
+              %li.page-scroll
+                = link_to "Salir", destroy_user_session_path, :method => :delete
+    = yield

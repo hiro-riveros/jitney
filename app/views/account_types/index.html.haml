@@ -31,8 +31,10 @@
                         %td
                           %a.btn.btn-sm.btn-danger{"data-original-title" => "eliminar", "data-toggle" => "tooltip", :href => "/account_types/#{at.id}", "data-method" => "delete", :type => "button"}
                             %i.glyphicon.glyphicon-remove 
+                            &nbsp eliminar
                           %a.btn.btn-sm.btn-danger{"data-original-title" => "editar", "data-toggle" => "tooltip", :href => "/account_types/#{at.id}/edit", :type => "button"}
                             %i.glyphicon.glyphicon-edit 
+                            &nbsp editar
           .panel-footer
             /%a.btn.btn-sm.btn-primary{"data-original-title" => "reportar un prolema", "data-toggle" => "tooltip", :href => "/user_problems/new",:type => "button"}
             /%i.glyphicon.glyphicon-envelope
