@@ -8,18 +8,18 @@ class UserProblemsController < ApplicationController
 	end
 
 	def create
-		user_problem = UserProblem.new
-		user_problem.type_of_problem = params['user_problem']['type_of_problem']
-		user_problem.problem = params['user_problem'][:problem]
-		user_problem.phone = params['user_problem'][:phone]
-		user_problem.user_id = current_user.id
-		user_problem.save
+		@user_problem = UserProblem.new
+		@user_problem.type_of_problem = params['user_problem']['type_of_problem']
+		@user_problem.problem = params['user_problem'][:problem]
+		@user_problem.phone = params['user_problem'][:phone]
+		@user_problem.user_id = current_user.id
+		@user_problem.save
 
 		redirect_to user_problems_path
 	end
 
 	def new
-		@user_problem = UserProblem.new
+		@up = UserProblem.new
 	end
 
 	def update
