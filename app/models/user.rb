@@ -87,6 +87,7 @@ class User < ActiveRecord::Base
   def set_actable
     #binding.pry
     @user = User.last
+    @user.account_type = 2
     @user.actable_type = "Passenger"
     @user.save
   end

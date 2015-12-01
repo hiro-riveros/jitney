@@ -29,7 +29,7 @@
                 </div>
               .col-md-9.col-lg-9
                 %table.table.table-user-information
-                  = form_for @user_problem, url: {action: "create"}, html: {class: "nifty_form"} do |up|
+                  = form_for @up, url: {action: "create"}, html: {class: "nifty_form"} do |up|
                     %tbody
                       %tr
                         %td tipo de problema (breve descripción):
