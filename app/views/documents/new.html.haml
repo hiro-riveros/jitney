@@ -11,6 +11,9 @@
           .panel-heading
             %h3.panel-title Nuevo documento
           .panel-body
+            %p.text-center A continuación, se dispone de un formulario el cual debes llenar para poder acreditar tu identidad como taxi-colectivo.
+            %p.text-center El proceso de validación y el tiempo para ello dependerá del staff de JIR, para asegurar calidad para nuestros usuarios, este paso no se puede omitir.
+            %p.text-center Las caracteristicas estarán disponibles una vez se active tu estado de taxi-colectivo mediante la validación de esta documentación, asimismo, el cobro mensual comenzará a un mes posterior a ello.
             .row
               .col-md-12.col-lg-12
                 = form_for @document , url: {action: 'create'}, html: {class: 'nifty_form'} do |f|

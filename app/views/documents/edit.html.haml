@@ -11,6 +11,7 @@
           .panel-heading
             %h3.panel-title Documento de acreditación
           .panel-body
+            %p.text-center Actualización del estado de la documentación
             .row
               .col-md-12.col-lg-12
                 = form_for @document , url: {action: 'update'}, html: {class: 'nifty_form'} do |f|
