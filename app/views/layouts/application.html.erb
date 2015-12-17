@@ -67,10 +67,13 @@
             -->
             <% if current_user == nil %>
               <li class="page-scroll">
+                <a href="#about">Nosotros</a>
+              </li>
+              <li class="page-scroll">
                 <a data-toggle="modal" href="#registerModal">Registrarse</a>
               </li>
               <li class="page-scroll">
-                <a data-toggle="modal" href="#loginModal">Login</a>
+                <a data-toggle="modal" href="#loginModal">Iniciar sesión</a>
               </li>
             <% else %>
               <% if current_user.account_type != nil %>
@@ -90,6 +93,9 @@
                   </li>
                 <% end %>
               <% end %>
+              <li class="page-scroll">
+                <a href="#about">Nosotros</a>
+              </li>
               <li class="page-scroll">
                 <%= link_to 'Perfil', "/profile/#{current_user.id}" %>
               </li>
