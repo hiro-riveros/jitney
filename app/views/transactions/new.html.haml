@@ -11,6 +11,7 @@
           .panel-heading
             %h3.panel-title Suscripción
           .panel-body
+            %p.text-center En esta sección podrás acceder a las funciones disponibles para taxi-colectivos mediante un abono mensual a estas caracteristicas
             .row
               .col-md-12.col-lg-12
                 = form_for @transaction , url: {action: 'create'}, html: {class: 'nifty_form'} do |f|

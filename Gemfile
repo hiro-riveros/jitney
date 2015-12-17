@@ -38,6 +38,8 @@ gem 'active_record-acts_as'
 
 gem 'therubyracer'
 
+gem 'therubyracer'
+
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
 
