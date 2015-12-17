@@ -1,11 +1,23 @@
 class User < ActiveRecord::Base
+  after_create :set_actable
+  # Enable API authentication
+  acts_as_token_authenticatable 
+  
+  ## RELATIONS
+  has_many :positions
+  has_many :user_problems
+  has_many :user_histories
+  has_many :sessions
+  has_many :transactions
+
   TEMP_EMAIL_PREFIX = 'change@me'
   TEMP_EMAIL_REGEX = /\Achange@me/
 
+
   # Include default devise modules. Others available are:
   # :lockable, :timeoutable
-  devise :database_authenticatable, :registerable, :confirmable,
-    :recoverable, :rememberable, :trackable, :validatable, :omniauthable
+
+  devise :database_authenticatable, :registerable, :recoverable, :rememberable, :trackable, :omniauthable, :validatable
 
   validates_format_of :email, :without => TEMP_EMAIL_REGEX, on: :update
 
@@ -54,4 +66,31 @@ class User < ActiveRecord::Base
   def email_verified?
     self.email && self.email !~ TEMP_EMAIL_REGEX
   end
+
+  ## STATIC VALUES
+  # To add a new role, include it on the list.
+  ROLES = %W[admin_user passenger jitney]
+  
+  ## ACT ASS SUPERCLASS
+  actable
+  ## INSTANCE METHODS
+  ROLES.each do |role_name|
+    define_method "#{role_name}?".to_sym do
+      self.role?.present? && (self.role?.eql? role_name)
+    end
+  end
+  
+  def role?
+    self.actable_type.underscore
+  end
+
+  def set_actable
+    #binding.pry
+    @user = User.last
+    @user.account_type = 2
+    @user.actable_type = "Passenger"
+    @user.save
+  end
+
+
 end 

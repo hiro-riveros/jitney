@@ -30,8 +30,13 @@ gem 'rails-i18n'
 # Making HTML emails comfortable for the Rails rockstars
 gem 'premailer-rails'
 gem 'nokogiri'
+
 # Simple (but safe) token authentication for Rails apps or API with Devise.
 gem 'simple_token_authentication', '~> 1.0'
+# Use heritage for admin_users (manage role). Read more: https://github.com/hzamani/acts_as_relation
+gem 'active_record-acts_as'
+
+gem 'therubyracer'
 
 gem 'therubyracer'
 
@@ -47,21 +52,21 @@ gem 'capistrano-rails', group: :development
 group :development, :test do
   gem "rspec-rails"
   gem "factory_girl_rails"
-  #gem "pry-byebug"
+  gem "pry-byebug"
   gem "zeus"
   gem "guard-rspec", require: false
   gem "rspec-nc", require: false
   gem "pry-rails"
   gem "faker"
   gem "quiet_assets"
-  #gem "better_errors"
+  gem "better_errors"
   gem "binding_of_caller"
 end
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
 #gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 
-gem 'haml-rails', '>= 0.3.4', :group => :development
+gem 'haml-rails', '>= 0.3.4'
 
 gem 'simple_form'
 

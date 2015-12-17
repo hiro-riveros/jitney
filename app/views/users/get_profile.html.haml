@@ -31,21 +31,23 @@
                 %table.table.table-user-information
                   %tbody
                     %tr
-                      %td Last name:
-                      %td #{current_user.last_name}
+                      %td Apellido paterno:
+                      %td 
+                        #{current_user.last_name}
                     %tr
-                      %td Second last name:
-                      %td #{current_user.slast_name}
+                      %td Apellido materno:
+                      %td 
+                        #{current_user.slast_name}
                     %tr
-                      %td Age
+                      %td Edad
                       %td
                         #{current_user.age}
+                    /%tr
+                    / %td Created at:
+                    /%td 
+                    / #{current_user.confirmed_at}
                     %tr
-                      %td Created at:
-                      %td 
-                        #{current_user.confirmed_at}
-                    %tr
-                      %td Email
+                      %td Correo
                       %td
                         /%a{:href => "mailto:info@support.com"} info@support.com
                         #{current_user.email}
@@ -58,11 +60,22 @@
                 / %a.btn.btn-primary{:href => "#"} My Sales Performance
                 / %a.btn.btn-primary{:href => "#"} Team Sales Performance
           .panel-footer
-            %a.btn.btn-sm.btn-primary{"data-original-title" => "Broadcast Message", "data-toggle" => "tooltip", :type => "button"}
+            %a.btn.btn-sm.btn-primary{"data-original-title" => "reportar un prolema", "data-toggle" => "tooltip", :href => "/user_problems/new",:type => "button"}
               %i.glyphicon.glyphicon-envelope
+              &nbsp reportar
+            %a.btn.btn-sm.btn-danger{"data-original-title" => "mis problemas", "data-toggle" => "tooltip", :href => "/user_problems",:type => "button"}
+              %i.glyphicon.glyphicon-envelope
+              &nbsp mis reportes
             %span.pull-right
-              %a.btn.btn-sm.btn-warning{"data-original-title" => "Edit this user", "data-toggle" => "tooltip", :href => "/users/#{current_user.id}/edit", :type => "button"}
+              %a.btn.btn-sm.btn-warning{"data-original-title" => "editar perfil", "data-toggle" => "tooltip", :href => "/users/#{current_user.id}/edit", :type => "button"}
                 %i.glyphicon.glyphicon-edit
-              %a.btn.btn-sm.btn-danger{"data-original-title" => "Remove this user", "data-toggle" => "tooltip", :type => "button"}
-                %i.glyphicon.glyphicon-remove
-  }
+                &nbsp editar
+              - if current_user.account_type == 2
+                %a.btn.btn-sm.btn-primary{"data-original-title" => "suscribirme", "data-toggle" => "tooltip", :href => "/transactions/new", :type => "button"}
+                  %i.glyphicon.glyphicon-edit
+                  &nbsp suscribirme
+                %a.btn.btn-sm.btn-primary{"data-original-title" => "documentación para acreditación", "data-toggle" => "tooltip", :href => "/documents", :type => "button"}
+                  %i.glyphicon.glyphicon-envelope
+                  &nbsp documentación
+              /%a.btn.btn-sm.btn-danger{"data-original-title" => "Remove this user", "data-toggle" => "tooltip", :type => "button"}
+              /%i.glyphicon.glyphicon-remove

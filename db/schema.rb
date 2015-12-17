@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20151025161905) do
+ActiveRecord::Schema.define(version: 20151130050529) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -24,12 +24,24 @@ ActiveRecord::Schema.define(version: 20151025161905) do
     t.datetime "updated_at",  null: false
   end
 
+  create_table "cars", force: :cascade do |t|
+    t.integer  "jitney_id"
+    t.string   "patent"
+    t.string   "model"
+    t.string   "route"
+    t.integer  "passengers",              array: true
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
   create_table "documents", force: :cascade do |t|
     t.string   "name"
     t.string   "coment"
     t.string   "path"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string   "status"
+    t.integer  "user_id"
   end
 
   create_table "identities", force: :cascade do |t|
@@ -42,12 +54,35 @@ ActiveRecord::Schema.define(version: 20151025161905) do
 
   add_index "identities", ["user_id"], name: "index_identities_on_user_id", using: :btree
 
+  create_table "jitneys", force: :cascade do |t|
+    t.string   "route"
+    t.boolean  "automatic_map"
+    t.datetime "created_at",    null: false
+    t.datetime "updated_at",    null: false
+  end
+
+  create_table "passengers", force: :cascade do |t|
+    t.json     "frequent_destiny"
+    t.boolean  "automatic_map"
+    t.datetime "created_at",       null: false
+    t.datetime "updated_at",       null: false
+  end
+
   create_table "plans", force: :cascade do |t|
     t.string   "name"
     t.integer  "price"
     t.string   "description"
     t.datetime "created_at",  null: false
     t.datetime "updated_at",  null: false
+  end
+
+  create_table "positions", force: :cascade do |t|
+    t.integer  "user_id"
+    t.float    "latitude"
+    t.float    "longitude"
+    t.json     "perimeter"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
   create_table "products", force: :cascade do |t|
@@ -58,20 +93,33 @@ ActiveRecord::Schema.define(version: 20151025161905) do
     t.datetime "updated_at",  null: false
   end
 
+  create_table "transactions", force: :cascade do |t|
+    t.integer "user_id"
+    t.string  "client_token"
+    t.integer "amount"
+    t.integer "product_id"
+    t.string  "response_status"
+    t.string  "response_comment"
+    t.string  "bank_name"
+    t.string  "transaction_type"
+  end
+
   create_table "user_histories", force: :cascade do |t|
     t.float    "latitude"
     t.float    "longitude"
     t.integer  "order"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.integer  "user_id"
   end
 
   create_table "user_problems", force: :cascade do |t|
-    t.integer  "type"
+    t.string   "type_of_problem"
     t.string   "problem"
     t.string   "phone"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+    t.datetime "created_at",      null: false
+    t.datetime "updated_at",      null: false
+    t.integer  "user_id"
   end
 
   create_table "users", force: :cascade do |t|
@@ -89,14 +137,22 @@ ActiveRecord::Schema.define(version: 20151025161905) do
     t.datetime "confirmed_at"
     t.datetime "confirmation_sent_at"
     t.string   "unconfirmed_email"
+    t.integer  "actable_id"
+    t.string   "actable_type"
+    t.string   "authentication_token"
+    t.datetime "created_at",                          null: false
+    t.datetime "updated_at",                          null: false
     t.string   "name"
     t.integer  "account_type"
     t.integer  "age"
     t.string   "last_name"
     t.string   "slast_name"
     t.string   "img_url"
+    t.boolean  "is_active"
   end
 
+  add_index "users", ["authentication_token"], name: "index_users_on_authentication_token", using: :btree
+  add_index "users", ["confirmation_token"], name: "index_users_on_confirmation_token", unique: true, using: :btree
   add_index "users", ["email"], name: "index_users_on_email", unique: true, using: :btree
   add_index "users", ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true, using: :btree
 

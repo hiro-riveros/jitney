@@ -1,0 +1,1 @@
+json.extract! @car, :id, :jitney_id, :patent,  :model, :route, :passengers

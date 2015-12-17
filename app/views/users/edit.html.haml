@@ -38,25 +38,26 @@
                       /   %td Hire date:
                       /   %td 06/23/2013
                       %tr
-                        %td Age
+                        %td Edad
                         %td
                           = f.text_field :age
                       %tr
-                        %td Gender
-                        %td Female
+                        %td Genero
+                        %td 
+                          = select_tag :gender, options_for_select([['Mujer', 'mujer'], ['Hombre', 'hombre']])
                       %tr
-                        %td Email
+                        %td Correo
                         %td #{current_user.email}
                       %tr
-                        %td Name
+                        %td Nombre
                         %td
                           = f.text_field :name
                       %tr
-                        %td Last name
+                        %td Apellido paterno
                         %td
                           = f.text_field :last_name
                       %tr
-                        %td Second last name
+                        %td Apellido materno
                         %td
                           = f.text_field :slast_name
                       %tr

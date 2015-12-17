@@ -1,0 +1,248 @@
+%section#slider
+  .container
+    .row
+      .col-lg-12
+      .container-fluid{"ng-controller" => "LandingController"}
+        .row
+          .col-md-12.col-sm-12.col-xs-12.content
+            /
+              \= yield
+            /
+              begin:slider
+            #home
+              #home-slider.carousel.slide.carousel-fade{"data-ride" => "carousel"}
+                %ol.carousel-indicators
+                  %li.active{"data-slide-to" => "0", "data-target" => "#home-slider"}
+                  %li{"data-slide-to" => "1", "data-target" => "#home-slider"}
+                  /
+                    \%li{"data-slide-to" => "2", "data-target" => "#home-slider"}
+                .carousel-inner
+                  .item.active{:style => "background: url(img/image-1.jpg);"}
+                    .container
+                      .row
+                        .col-md-12
+                          .carousel-content
+                            %h2.animated.fadeInUpBig.text-center.text-black jitney in route
+                            %p.animated.rollIn.text-black.text-center
+                              %span.text900
+                                Todos queremos que las cosas sean mas faciles.
+                              %br/
+                              %br/
+                              %a.btn.btn-green.btn-lg{:href => "#"} Registrate
+                  .item{:style => "background: url(img/image-2.jpg);"}
+                    .container
+                      .row
+                        .col-md-12
+                          .carousel-content.text-center
+                            %h3.animated.fadeInLeftBig Compras
+                            %p.animated.fadeInDownBig
+                              ¿Eres chofer de colectivos? toma ventaja, suscribete
+                              %br/
+                              y obtén beneficios para tu negocio.
+                            / <a class="btn btn-green btn-lg animated fadeInRight" href="#">possimus corporis et nam distinctio</a>
+                %a.left.carousel-control{"data-slide" => "prev", :href => "#home-slider"}
+                  %i.fa.fa-angle-left
+                %a.right.carousel-control{"data-slide" => "next", :href => "#home-slider"}
+                  %i.fa.fa-angle-right
+                .pattern
+            /
+              end:slider
+            /
+              \/ begin:plans
+            /
+              \#plans.animated.fadeIn
+            /
+              \.row
+            /
+              \.col-md-12.col-sm-12.col-xs-12
+            /
+              \.col-md-4.col-sm-4
+            /
+              \.card
+            /
+              \.card-title
+            /
+              \.card-body
+            /
+              \.col-md-4.col-sm-4
+            /
+              \.card
+            /
+              \.card-title
+            /
+              \.card-body
+            /
+              \.col-md-4.col-sm-4
+            /
+              \.card
+            /
+              \.card-title
+            /
+              \.card-body
+            /
+              \/ end:plans
+            /
+              \/ begin:app
+            /
+              \#app.animated.fadeIn
+            /
+              \.row.row-one
+            /
+              \.col-md-12.col-sm-12.col-xs-12
+            /
+              \.col-md-5.col-sm-5.col-xs-5.text-justify.animated.fadeInLeft
+            /
+              \.col-md-7.col-sm-7.col-xs-7.animated.fadeInRight
+            /
+              \.image-app.text-justify
+            /
+              \.row.row-two
+            /
+              \.col-md-12.col-sm-12.col-xs-12
+            /
+              \.col-md-7.col-sm-7.col-xs-7.animated.rotateInUpLeft
+            /
+              \.image-app.text-justify
+            /
+              \.col-md-5.col-sm-5.col-xs-5.text-justify.rotateInUpRight
+            /
+              \/ end:app
+/
+  Portfolio Grid Section
+/
+  <section id="portfolio">
+  <div class="container">
+  <div class="row">
+  <div class="col-lg-12 text-center">
+  <h2>Portfolio</h2>
+  <hr class="star-primary"/>
+  </div>
+  </div>
+  <div class="row">
+  <div class="col-sm-4 portfolio-item">
+  <a class="portfolio-link" data-toggle="modal" href="#portfolioModal1">
+  <div class="caption">
+  <div class="caption-content">
+  <i class="fa fa-search-plus fa-3x"></i>
+  </div>
+  </div>
+  <img class="img-responsive" src="img/portfolio/cabin.png"/>
+  </a>
+  </div>
+  <div class="col-sm-4 portfolio-item">
+  <a class="portfolio-link" data-toggle="modal" href="#portfolioModal2">
+  <div class="caption">
+  <div class="caption-content">
+  <i class="fa fa-search-plus fa-3x"></i>
+  </div>
+  </div>
+  <img class="img-responsive" src="img/portfolio/cake.png"/>
+  </a>
+  </div>
+  <div class="col-sm-4 portfolio-item">
+  <a class="portfolio-link" data-toggle="modal" href="#portfolioModal3">
+  <div class="caption">
+  <div class="caption-content">
+  <i class="fa fa-search-plus fa-3x"></i>
+  </div>
+  </div>
+  <img class="img-responsive" src="img/portfolio/circus.png"/>
+  </a>
+  </div>
+  <div class="col-sm-4 portfolio-item">
+  <a class="portfolio-link" data-toggle="modal" href="#portfolioModal4">
+  <div class="caption">
+  <div class="caption-content">
+  <i class="fa fa-search-plus fa-3x"></i>
+  </div>
+  </div>
+  <img class="img-responsive" src="img/portfolio/game.png"/>
+  </a>
+  </div>
+  <div class="col-sm-4 portfolio-item">
+  <a class="portfolio-link" data-toggle="modal" href="#portfolioModal5">
+  <div class="caption">
+  <div class="caption-content">
+  <i class="fa fa-search-plus fa-3x"></i>
+  </div>
+  </div>
+  <img class="img-responsive" src="img/portfolio/safe.png"/>
+  </a>
+  </div>
+  <div class="col-sm-4 portfolio-item">
+  <a class="portfolio-link" data-toggle="modal" href="#portfolioModal6">
+  <div class="caption">
+  <div class="caption-content">
+  <i class="fa fa-search-plus fa-3x"></i>
+  </div>
+  </div>
+  <img class="img-responsive" src="img/portfolio/submarine.png"/>
+  </a>
+  </div>
+  </div>
+  </div>
+  </section>
+/
+  About Section
+%section#about.success
+  .container
+    .row
+      .col-lg-12.text-center
+        %h2 About
+        %hr.star-light/
+    .row
+      .col-lg-4.col-lg-offset-2
+        %p Freelancer is a free bootstrap theme created by Jitney in Route. The download includes the complete source files including HTML, CSS, and JavaScript as well as optional LESS stylesheets for easy customization.
+      .col-lg-4
+        %p Whether you're a student looking to showcase your work, a professional looking to attract clients, or a graphic artist looking to share your projects, this template is the perfect starting point!
+      .col-lg-8.col-lg-offset-2.text-center
+        /%a.btn.btn-lg.btn-outline{:href => "#"}
+          /%i.fa.fa-download
+          /Download Theme
+/
+  Contact Section
+/
+  To configure the contact form email address, go to mail/contact_me.php and update the email address in the PHP file on line 19.
+/
+  The form should work on most web servers, but if the form is not working you may need to configure your web server differently.
+/
+  <section id="contact">
+  <div class="container">
+  <div class="row">
+  <div class="col-lg-12 text-center">
+  <h2>Contact Me</h2>
+  <hr class="star-primary"/>
+  </div>
+  </div>
+  <div class="row">
+  <div class="col-lg-8 col-lg-offset-2">
+  
+  <form id="contactForm" name="sentMessage">
+  <div class="row control-group">
+  <div class="form-group col-xs-12 floating-label-form-group controls">
+  <label>Name</label>
+  <input class="form-control" data-validation-required-message="Please enter your name." id="name" placeholder="Name" type="text">
+  <p class="help-block text-danger"></p>
+  </input>
+  </div>
+  </div>
+  <div class="row control-group">
+  <div class="form-group col-xs-12 floating-label-form-group controls">
+  <label>Email Address</label>
+  <input class="form-control" data-validation-required-message="Please enter your email address." id="email" placeholder="Email Address" type="email">
+  <p class="help-block text-danger"></p>
+  </input>
+  </div>
+  </div>
+  <div class="row control-group">
+  <div class="form-group col-xs-12 floating-label-form-group controls">
+  <label>Phone Number</label>
+  <input class="form-control" data-validation-required-message="Please enter your phone number." id="phone" placeholder="Phone Number" type="tel">
+  <p class="help-block text-danger"></p>
+  </input>
+  </div>
+  </div>
+  <div class="row control-group">
+  <div class="form-group col-xs-12 floating-label-form-group controls">
+  <label>Message</label>
+  <textarea class="form-control" data-validation-required-message="Please enter a message." id="message" placeholder="Message" rows="5">

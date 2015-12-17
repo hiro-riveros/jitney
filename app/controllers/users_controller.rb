@@ -8,6 +8,14 @@ class UsersController < ApplicationController
     #raise current_user.inspect
   end
 
+  def index
+    if current_user.account_type == 1
+      @users = User.all
+    else
+      redirect_to "/profile/#{current_user.id}"
+    end
+  end
+
   def get_profile
 
   end
@@ -23,6 +31,8 @@ class UsersController < ApplicationController
     #raise user_params.inspect
     respond_to do |format|
       if @user.update(user_params)
+        @user.actable_type ="Passenger"
+        @user.save
         sign_in(@user == current_user ? @user : current_user, :bypass => true)
         format.html { redirect_to "/profile/#{current_user.id}", notice: 'Your profile was successfully updated.' }
         format.json { head :no_content }
