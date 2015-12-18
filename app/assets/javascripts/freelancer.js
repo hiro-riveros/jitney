@@ -36,24 +36,54 @@ $('.navbar-collapse ul li a').click(function() {
     $('.navbar-toggle:visible').click();
 });
 
-function sendCreate(){
-    var url = 'https://jitneyinroute.herokuapp.com/api/users';
-    var data = {
-        email: $('.register_user_email').val(),
-        password: $('.register_user_password').val(),
-        password_confirmation: $('.register_user_password_confirmation').val()
-    };
-
-    $.ajax({
-        type: 'POST',
-        url: url,
-        data: data,
-        success: function(success){
-            alert('usuario creado correctamente');
-            window.location.reload();
-        },
-        error: function(error){
-            alert('error al intentar crear el usuario');
-        }
+$(document).ready(function(){
+    $('#btn-signup').on('click', function(){
+        sendCreate();
     });
-}
+
+    function sendCreate(){
+        //var url = 'https://jitneyinroute.herokuapp.com/api/users';
+        //var url2 = 'https://jitneyinroute.herokuapp.com/api/sessions';
+        var url = 'http://localhost:3000//api/users';
+        var url2 = 'http://localhost:3000/api/sessions';
+        //var url2 = 'http://localhost:3000/users/sign_in';
+        var data = {
+            email: $('.register_user_email').val(),
+            password: $('.register_user_password').val(),
+            password_confirmation: $('.register_user_password_confirmation').val()
+        };
+        debugger;
+        $.ajax({
+            type: 'POST',
+            url: url,
+            data: data,
+            success: function(success){
+                //alert('usuario creado correctamente');
+                //window.location.reload();
+                debugger;
+                $.ajax({
+                    type: 'POST',
+                    url: url2,
+                    data: {
+                        email: data.email,
+                        password: data.password
+                    },
+                    success: function(success){
+                        debugger;
+                        alert('autenticado correctamente');
+                        window.location.reload();
+                        //window.location.href('https://jitneyinroute.herokuapp.com/users');
+                    },
+                    error: function(error){
+                        debugger;
+                        alert('error al intentar iniciar sesión automáticamente, porfavor intentelo manualmente');
+                    }
+                });
+            },
+            error: function(error){
+                alert('error al intentar crear el usuario');
+            }
+        });
+    }
+
+});

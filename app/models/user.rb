@@ -1,5 +1,5 @@
 class User < ActiveRecord::Base
-  after_create :set_actable
+  #after_create :set_actable
   # Enable API authentication
   acts_as_token_authenticatable 
   
@@ -85,12 +85,14 @@ class User < ActiveRecord::Base
   end
 
   def set_actable
-    #binding.pry
+    binding.pry
+    #passenger = Passenger.create(automatic_map: true)
     @user = User.last
     @user.account_type = 2
     @user.actable_type = "Passenger"
     @user.save
+    super.sign_in(@user, :bypass => true)
+    redirect_to "/profile/#{@user.id}", notice: 'Your profile was successfully updated.'
   end
-
 
 end 

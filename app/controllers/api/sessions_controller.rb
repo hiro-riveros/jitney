@@ -8,6 +8,8 @@ module Api
     # See https://github.com/gonzalo-bulnes/simple_token_authentication/issues/27
     #binding.pry
     def create
+      #binding.pry
+
       #raise params.inspect
       # Fetch params
       email = params[:email] if params[:email]
