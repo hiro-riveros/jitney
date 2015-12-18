@@ -1,39 +1,19 @@
-# production:
-#   adapter: postgresql
-#   encoding: utf8
-#   database: jitney
-#   pool: 5
-#   username: jir
-#   password: jir
-#   host: localhost
-#   port: 5432
+production:
+  adapter: postgresql
+  encoding: utf8
+  database: jitney
+  pool: 5
+  username: jir
+  password: jir
+  host: localhost
+  port: 5432
 
-# development:
-#   adapter: postgresql
-#   encoding: utf8
-#   database: jitney
-#   pool: 5
-#   username: postgres
-#   password: postgres
-#   host: localhost
-#   port: 5432
-
- production:
-   adapter: postgresql
-   encoding: utf8
-   database: jitney
-   pool: 5
-   username: jir
-   password: jir
-   host: localhost
-   port: 5432
-
- development:
-   adapter: postgresql
-   encoding: utf8
-   database: jitney
-   pool: 5
-   username: postgres
-   password: postgres
-   host: localhost
-   port: 5432
+development:
+  adapter: postgresql
+  encoding: utf8
+  database: jitney
+  pool: 5
+  username: hirochi
+  password: 123456
+  host: localhost
+  port: 5432

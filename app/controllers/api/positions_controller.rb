@@ -13,7 +13,10 @@ module Api
 		def create
 			@position = Position.new(user_id: params[:user_id], latitude: params[:latitude], longitude: params[:longitude], perimeter: params[:perimeter])
 			if @position.save
-				respond_with(@position)
+				@user_history = UserHistory.new(user_id: params[:user_id], latitude: params[:latitude], longitude: params[:longitude], order: 0)
+				if @user_history.save
+					respond_with(@position)
+				end
 			else
 				respond_with(@position)
 			end

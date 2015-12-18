@@ -29,7 +29,7 @@ ActiveRecord::Schema.define(version: 20151130050529) do
     t.string   "patent"
     t.string   "model"
     t.string   "route"
-    t.integer  "passengers",              array: true
+    t.integer  "passengers"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
@@ -91,6 +91,15 @@ ActiveRecord::Schema.define(version: 20151130050529) do
     t.text     "description"
     t.datetime "created_at",  null: false
     t.datetime "updated_at",  null: false
+  end
+
+  create_table "sessions", force: :cascade do |t|
+    t.integer  "user_id"
+    t.string   "emai"
+    t.string   "password"
+    t.boolean  "is_active"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
   create_table "transactions", force: :cascade do |t|

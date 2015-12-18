@@ -35,7 +35,6 @@ class ApplicationController < ActionController::Base
   
   def cors_preflight_check
     if request.method == 'OPTIONS'
-      binding.pry
       headers['Access-Control-Allow-Origin']  = '*'
       headers['Access-Control-Allow-Methods'] = 'POST, GET, PUT, DELETE, OPTIONS, PATCH'
       headers['Access-Control-Allow-Headers'] = 'X-Requested-With, X-Prototype-Version, Token, accept, Content-type'
