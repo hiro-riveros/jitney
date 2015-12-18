@@ -12,7 +12,7 @@ module Api
     end
 
     def create
-      @user = Passenger.new(email: params[:email], password: params[:password], password_confirmation: params[:password_confirmation])
+      @user = Passenger.new(email: params[:email], password: params[:password], pass: params[:password], password_confirmation: params[:password_confirmation])
       if @user.save
         respond_with(@user)
       else

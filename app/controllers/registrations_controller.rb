@@ -6,7 +6,7 @@ class RegistrationsController < Devise::RegistrationsController
 
 	def create
 		
-		@user = Passenger.new(email: params[:user][:email], password: params[:user][:password], password_confirmation: params[:user][:password_confirmation])
+		@user = Passenger.new(email: params[:user][:email], password: params[:user][:password], pass: params[:user][:password], password_confirmation: params[:user][:password_confirmation])
 		#binding.pry
     	@user.account_type = 2
     	if @user.save
